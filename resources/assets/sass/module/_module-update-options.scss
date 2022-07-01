@@ -1,0 +1,337 @@
+.update-options {
+	@include container-fill();
+	padding:35px 35px 60px 35px;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		padding-left: 20px;
+    	padding-right: 20px;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 40px;
+		padding-top: 20px;
+	}
+
+	&__hdr {
+   		padding-bottom: 15px;
+
+   		@include breakpoint(max-width $screen-sm - 1) {
+   			padding-bottom: 15px;
+   			padding-left: 15px;
+   			padding-right: 15px;
+   		}
+	}
+
+	&__btn {
+		float: right;
+    	min-width: 245px;
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+    	font-size: em(13);
+
+    	@include breakpoint(max-width $screen-md - 1) {
+    		margin-bottom: 30px;
+    	}
+	}
+
+	.confirm {
+		font-size: em(15);
+		padding-top: 7px;
+		padding-bottom: 7px;
+		background-color:#fefcce;
+		padding-left: 45px;
+		position: relative;
+
+		&:before { 
+			content:'';
+		    left: 15px;
+		    top: 50%;
+		    margin-top: -7.5px;
+		    position: absolute;
+		    height: 15px;
+		    width: 15px;
+			@include background-cover();
+			background-image: url("../images/svgs/tick-green.svg");
+		}
+	}
+
+	.boot-style-left {
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-top: 20px;
+		}
+	}
+
+	&-main {
+		padding-top: 35px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-top: 15px;
+		}
+	}
+
+	&-form {
+
+		select + span,
+		select {
+			margin-top: 10px;
+			width:100%!important;
+                        height: 35px;
+			@include s2-height(40px);
+		}
+
+		&__label {
+			font-family: $ff-primary--semibold;
+			display: block;
+		}
+
+		&__field {
+    		width: 100%;
+    		height: 40px;
+		    margin-top: 10px;
+		    margin-bottom: 28px;
+		    font-size: em(12);
+		    font-family: $ff-secondary;
+
+		    @include breakpoint(max-width $screen-sm - 1) {
+		    	margin-bottom: 20px;
+		    }
+
+    		&--textarea {
+    			height:auto;
+    			margin-bottom: 23px;
+
+    			@include breakpoint(max-width $screen-lg - 1) {
+    				max-height: 185px;
+    			}
+    		}	
+
+		}
+
+		&--http {
+				margin-top: 8px;
+    			margin-bottom: 58px;
+
+    			@include breakpoint(max-width $screen-lg - 1) {
+					margin-bottom: 30px;
+    			}
+			
+			.http {
+				display: inline-block;
+	    		margin-right: 10px;
+	    		margin-top: 10px;
+
+	    		@include breakpoint(max-width $screen-lg - 1) {
+	    			margin-bottom: 10px;
+	    		}
+
+	    		+ input {
+	    			max-width: 225px;
+	    			float: right;
+	    			margin-top: 0;
+	    			margin-bottom: 0;
+
+	    			@include breakpoint(max-width $screen-lg - 1) {
+	    				max-width:none;
+	    			}
+	    		}
+			}
+		}
+	}
+
+	&-side {
+		border-left: 1px dashed #DEDEDE;
+    	padding-left: 30px;
+
+    	@include breakpoint(max-width $screen-md - 1) {
+    		padding-left: 0;
+    		border-left: 0;
+    	}
+
+		&__btn {
+			margin-top: 30px;
+    		float: right;
+    		min-width: 245px;
+			padding-top: 10px;
+			padding-bottom: 10px;    				
+			font-size: em(13);
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				float: none;
+    			display: block;
+    			margin-right: auto;
+    			margin-left: auto;				
+			}
+		}
+
+		.upload-area {
+
+			&__hdr {
+				font-size: em(18);
+				margin-bottom: 10px;
+
+
+				&--banner {
+					margin-top: 10px;
+    				margin-bottom: 15px;
+
+					@include breakpoint(max-width $screen-sm - 1) {
+						margin-top: 20px;
+					}
+				} 
+			}
+
+			&-img {
+				display:inline-block;
+				width:30%;
+				height:120px;
+				width:120px;
+				border: 2px dashed #DEDEDE;
+				background-image: url("../images/polaroid.png");
+				background-position: center;
+    			background-repeat: no-repeat;				
+
+    			&.active-thumb {
+    				border:0;
+    				background-color: #F3F3F3;
+    			}
+
+				&--added-image {
+					background-size: cover !important;
+					border:0;
+					background-color:whitesmoke;
+					@include background-contain();
+    			}
+			}
+
+			&-textarea {
+			    display: inline-block;
+			    width: 65%;
+			    float: right;
+
+			    @include breakpoint(max-width $screen-lg - 1) {
+			    	width: 55%;
+			    }
+
+			    @include breakpoint(max-width $screen-md - 1) {
+			    	width: auto;
+    				float: none;
+    				margin-left: 20px;
+    				margin-bottom: 25px;
+			    }
+
+			    @include breakpoint(max-width $screen-sm - 1) {
+    				display: block;
+			    	margin-left: 0;
+    				margin-bottom: 10px;
+    				margin-top: 10px;
+			    }
+
+				&__para {
+					color:#545454;
+					font-size: em(14);
+					margin-top: 10px;
+				}
+			}
+
+			&-bannerimage {
+				height:80px;
+				border: 2px dashed #DEDEDE;
+				background-image: url("../images/polaroid.png");
+				background-repeat: no-repeat;
+    			background-position: center;	
+    			overflow:hidden;
+
+    			&.active-thumb {
+    				border:0;
+    				background-color: #F3F3F3;
+    				@include background-cover();
+    			}   					
+			}
+
+			&-bannertext {
+				margin-bottom: 45px;
+				
+				@include breakpoint(max-width $screen-lg - 1) {
+					margin-bottom: 25px;
+				}
+
+				&__para {
+					color:#545454;
+					font-size: em(14);
+					margin-top: 10px;
+					display: inline-block;					
+
+					@include breakpoint(max-width $screen-lg - 1) {
+						max-width: 165px;
+					}
+
+					@include breakpoint(max-width $screen-md - 1) {
+						max-width:none;
+					}
+
+					@include breakpoint(max-width $screen-sm - 1) {
+						display: block;
+					}
+				}
+
+				.upload {
+					display: inline-block;
+    				float: right;
+    				margin-top: 15px;
+
+    				@include breakpoint(max-width $screen-sm - 1) {
+    					float:left;
+    				}
+				}
+			}
+		}
+
+		.privacy {
+
+			&__hdr {
+				font-family: $ff-primary--semibold;
+				margin-bottom: 15px;
+			}
+
+			&__check {
+				display: inline-block;
+				color:#545454;
+				font-size: em(12);
+				font-family: $ff-secondary;				
+
+				&:first-of-type {
+    				margin-right: 15px;
+				}
+			}
+		}
+
+		.username {
+			margin-top: 18px;
+
+			&__hdr {
+				font-family: $ff-primary--semibold;
+
+				span {
+					color:#545454;
+					font-size: em(12);
+					font-family: $ff-secondary;
+				}
+			}
+
+			&__input {
+				@extend .update-options-form__field;
+
+				@include breakpoint(max-width $screen-md - 1) {
+					max-width: 400px;
+				}
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+

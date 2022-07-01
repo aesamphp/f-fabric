@@ -1,0 +1,54 @@
+.thank-you {
+	position: relative;
+	text-align:center;
+	text-transform:uppercase;
+	padding-bottom: 35px;
+	border-bottom:dashed #e0e8e9 2px;
+	margin-bottom: 30px;
+
+	&__hdr {
+		font-size: em(30);
+		color:$pickout;
+		font-family: $ff-primary--semibold;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-top: 40px;
+		}
+	}
+
+	&__para {
+		font-size: em(19);
+		padding-top: 12px;
+
+		&--3d {
+			padding-bottom: 12px;
+		}
+	}
+
+	&__btn {
+		margin-top: 30px;
+	}
+
+	&__print {
+		font-size: em(16);
+		position: absolute;
+		right:0;
+		padding-right:30px;
+		color:$dark;
+
+		&:hover {
+			color:#656565;
+		}
+
+		&:after { 
+			content:'';
+			position: absolute;
+			@include background-contain();
+			background-image: url("../images/svgs/print.svg");
+			height:18px;
+			width:18px;
+			right:0;
+			top: 2px;
+		}
+	}
+}

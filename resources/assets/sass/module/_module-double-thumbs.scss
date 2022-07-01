@@ -1,0 +1,63 @@
+.double-thumbs {
+	@include container-fill();
+	padding:20px 30px;
+	min-width:470px;
+	float:right;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		min-width: initial;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		width: 100%;
+	    padding-top: 0;
+	    text-align: center;
+	    padding-bottom: 25px;		
+	}
+
+	&__hdr {
+		padding-bottom: 35px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			display:none;
+		}		
+	}
+
+	&__link {
+		display:none;
+		
+		@include breakpoint(max-width $screen-sm - 1) {
+			display:block;
+		}
+	}
+
+	&-inner-container {
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			display:none;
+		}
+
+		.single-thumbs-row {
+
+			.boot-style {
+				margin-bottom: 15px;
+
+				@include breakpoint(max-width $screen-lg - 1) {
+					margin-bottom: 0;
+				}
+			}
+
+			.single-thumbs {
+				max-height:210px;
+
+				@include breakpoint(max-width $screen-lg - 1) {
+					margin-bottom: 15px;
+				}
+                                
+                                .product-thumbnail {
+                                    height: 140px;
+                                }
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.aside-checklist {
+	padding:15px;
+	max-width: 230px;
+	font-family:$ff-primary--semibold;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		max-width:none;
+	}
+
+	&__hdr {
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-bottom: 0;
+			color:$dark!important;
+		}
+	}
+
+	&__check {
+		font-size:em(14);
+		padding-left: 20px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+		    display: inline-block;
+		    width: 32%;			
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			width:49%;
+		}
+	}
+        
+        .btn-clear-form-selection {
+            margin-bottom: 10px;
+        }
+}
+
+
+.aside-boot {
+	.boot-style-1 {
+	}
+}

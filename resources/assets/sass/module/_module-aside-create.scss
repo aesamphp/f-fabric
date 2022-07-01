@@ -1,0 +1,102 @@
+.aside-list,
+.aside-social,
+.aside-blog {
+	@include container-fill();	
+	margin-bottom: 15px;
+	padding:25px 20px 20px 25px;
+	max-width:250px;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		max-width:none;
+	}
+
+	@include breakpoint(max-width $screen-md - 1) {
+		box-shadow:none;
+		border-top: solid 1px #ECECEC;
+		margin-bottom: 0;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left:50px;
+		padding-right: 50px;
+	}
+
+	&__para {
+		float:none;
+	}	
+}
+
+.aside-list {
+
+	&__hdr {
+	}
+
+	&__para {
+	}
+
+	&-list {
+		padding-left: 15px;
+		
+		.item {
+			list-style-type:disc;
+			display:list-item;
+			font-size:em(15);
+			padding-bottom: 9.2px;
+
+			a {
+				color:$dark;
+
+				&:hover {
+					color:$pickout-light;
+				}
+			}
+		}
+	}
+}
+
+.aside-social {
+	&-btns {
+		&__btn {
+			height:27px;
+			width:27px;
+			margin-right:7px;
+		}
+	}
+}
+
+.aside-blog {
+	margin-bottom: 0px;
+
+	&__btn {
+		min-width: initial;
+	}
+}
+
+
+.aside-boots {
+
+	.boot-style {
+
+		@include breakpoint(max-width $screen-md - 1) {
+			border-right: solid 1px #ECECEC;
+		    margin-bottom: 0;	
+
+		    &:first-of-type {
+		    	padding-right:0;
+		    }	
+
+		    &:nth-child(2) {
+		    	padding-left:0;
+		    	padding-right:0;
+		    }
+
+		    &:last-of-type {
+		    	padding-left:0;
+		    }
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding:0;
+		}
+	}
+}

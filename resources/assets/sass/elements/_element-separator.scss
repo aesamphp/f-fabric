@@ -1,0 +1,29 @@
+.separator {
+	position: relative;
+    width: 85%;
+    display: block;
+    margin: 0 auto;	
+    text-align:center;
+    color:#414141;
+    font-size: em(28);
+    font-family: $ff-primary--semibold;
+
+	&:before,
+	&:after { 
+		content:'';
+		position: absolute;
+		height:1px;	
+		width:40%;
+		background-color:#e8e8e8;
+		top:50%;
+		margin-top:-1px;
+	}
+
+	&:before { 
+		left:0;
+	}
+
+	&:after { 
+		right:0;
+	}		
+}

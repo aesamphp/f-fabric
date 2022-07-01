@@ -1,0 +1,101 @@
+.contact {
+	&-image {
+		@include container-fill();
+		padding:20px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			display:none;
+		}
+
+		&__img {
+			@include background-cover();
+			background-image: url("../images/ruler-line.png");
+    		height: 100%;
+		}
+	}
+
+	&-form {
+		@include container-fill();
+		padding: 55px 70px 50px 70px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding:40px 40px 50px 40px;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 25px;
+			padding-bottom: 27px;
+		}
+
+		&__hdr {
+			font-family: $ff-primary--semibold;
+			font-size: em(24);
+			color:#494949;
+			text-transform:uppercase;
+			letter-spacing:1px;
+                        
+                        &.push-down {
+                            padding-top: 45px;
+                            
+                            @include breakpoint(max-width $screen-sm - 1) {
+                                padding-top: 35px;
+                            }
+                        }
+		}
+
+		&__para {
+			font-family: $ff-primary--semibold;
+			font-size: em(14);
+			letter-spacing:1px;
+			color:#494949;
+			padding-top: 20px;
+			padding-bottom: 45px;
+                        
+                        &.address {
+                            padding-bottom: 0px;
+                        }
+                        
+                        @include breakpoint(max-width $screen-sm - 1) {
+				padding-bottom: 35px;
+                        }
+
+			span {
+				color:$pickout;
+			}
+		}
+
+		&-input {
+
+			&__field {
+				height:40px;
+				margin-bottom: 10px;
+			}
+
+			&__textarea {
+				letter-spacing:0px;
+				margin-top: 15px;
+				margin-bottom: 45px;
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					margin-bottom: 20px;
+				}
+
+			}
+
+			&__field,
+			&__textarea {
+				width:100%;
+				border:1px solid #cccccc;
+				font-size: em(11);
+			}
+
+			&__btn {
+				display: block;
+    			max-width: 200px;
+    			margin: 0 auto;
+			}
+		}
+	}
+}

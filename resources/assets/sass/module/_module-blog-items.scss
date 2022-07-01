@@ -1,0 +1,55 @@
+.blog-item {
+	border:1px solid #cccccc;
+
+	&__img {
+		@include background-cover();
+		background-image:url('http://placehold.it/300x300');
+		height:200px;
+	}
+
+	&-textarea {
+		padding: 15px 20px;
+		font-family:$ff-primary--semibold;
+
+		&__hdr {
+			font-size:em(16);
+		}
+
+		&__time {
+			font-size:em(13);
+		}
+
+		&__para {
+			font-size:em(13);
+			color:#7a7a7a;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			@include webkit-line-clamp(3, 63px);
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				height: 56px;
+			}
+		}
+
+		&__link {
+			font-size:em(15);
+			float:right;
+		}
+	}
+
+	&--aside {
+		border:0;
+
+		.blog-item {
+			&-textarea {
+				padding-left:0;
+				padding-right:0;
+
+				&__link {
+					margin-top: 10px;
+				}
+			}
+		}
+	}	
+}
+

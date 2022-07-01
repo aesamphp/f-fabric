@@ -1,0 +1,99 @@
+.latest-products {
+    max-width: 950px;
+    margin: 0 auto;
+
+	&__hdr {
+		text-align:center;
+		padding-bottom: 30px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			text-align:left;
+	    	padding-left: 15px;
+	    	padding-right: 15px;
+		}
+	}
+
+	&__para {
+		font-size: em(16);
+		font-family: $ff-primary--semibold;
+		text-align:center;
+		padding-top: 45px;
+		padding-bottom: 30px;
+	}
+
+	&__btn {
+		margin: 0 auto;
+    	display: block;
+    	max-width: 200px;
+    	margin-top: 25px;
+	}
+}
+
+.latest-products-carousel {
+	position: relative;
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left: 5px;
+	}
+
+	.sly-content .sly-item {
+	    width: 215px!important;
+	    margin-left: 10px;
+	    margin-right: 10px;
+
+	    @include breakpoint(max-width $screen-md - 1) {
+	    	width: 310px!important;
+	    }
+
+    	@include breakpoint(max-width $screen-xs - 1) {
+			width: 270px!important;    		
+    	}	    
+	}	
+
+	.sly-prev--dark,
+	.sly-next--dark {
+		top: 50%;
+    	margin-top: -20px;
+
+    	@include breakpoint(max-width $screen-lg - 1) {
+    		display:none;
+    	}
+	}
+
+	.sly-prev--dark {
+    	left: -70px;
+	}
+
+	.sly-next--dark {
+    	right: -70px;
+	}	
+}
+
+.item-carousel {
+	&__list-item {
+		width:100%;
+	}
+
+	.boot-style {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+
+.container-latest-products {
+	@include container-fill();
+	padding-top: 30px;
+	padding-bottom: 35px;
+    margin-bottom: 65px;
+
+    @include breakpoint(max-width $screen-md - 1) {
+    	border-top: solid 1px #ebebeb;
+    	margin-bottom: 15px;
+    }	
+
+    @include breakpoint(max-width $screen-sm - 1) {
+    	margin-bottom: 0;
+    	padding-bottom: 40px;
+    }
+}

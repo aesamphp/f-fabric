@@ -1,0 +1,208 @@
+.aside-labels {
+	 max-width: 230px;
+
+	 @include breakpoint(max-width $screen-md - 1) {
+	 	max-width:none;
+	 }
+
+	 @include breakpoint(max-width $screen-sm - 1) {
+	 	padding-top: 10px;
+	 }
+
+	 &-mobile {
+
+	 	@include breakpoint(max-width $screen-sm - 1) {
+		 	background-image: url(../images/sowing-needle.png);
+		 	@include background-cover();
+	    	background-position-y: center;
+			margin-left: 15px;
+    		margin-right: 15px;	    	
+	 	}
+
+	 	&__hdr {
+	 		font-family: $ff-primary;
+	 		text-align: center;
+		    font-size: em(35);
+		    padding-top: 25px;
+		    padding-bottom: 15px;
+
+		    @include breakpoint(max-width $screen-sm - 1) {
+			    color:$light;
+		    	font-size: em(30);
+		    	padding-top: 5px;
+		    	padding-bottom: 10px;
+		    }
+	 	}
+	 }
+
+	&-input {
+		padding:12px;
+		border-bottom: 1px solid #f0f0f0;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			border-bottom:none;
+			padding-bottom: 0;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			display: none;
+		}
+
+		.input-grouped {
+			height: 37px;	
+		}
+
+		&__search {
+	
+		}
+
+		button {
+			background-image: url(../images/svgs/search.svg);
+		}
+	}
+
+	&-alphabet {
+		counter-reset: listStyle;
+		padding:20px;
+		font-family:$ff-primary--semibold;
+		text-transform:uppercase;
+
+		@include breakpoint(max-width $screen-md - 1) {
+    		padding-bottom: 40px;	
+    		padding-left: 12px;		
+    		padding-right: 12px;
+
+    		&.less-pad-sm {
+    			padding-bottom: 14px;
+    		}		
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			display: none;
+		}
+
+		&-list {
+			@include breakpoint(max-width $screen-md - 1) {
+				border: solid 1px #E4E4E4;
+	    		border-top: none;
+			}
+
+			.no-labels {
+				opacity:0;
+			}
+		}
+
+		&__hdr {
+			position: relative;
+			font-size:em(16);
+			letter-spacing:1px;
+			padding-bottom: 10px;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				text-align: center;
+    			font-size: em(16);
+    			padding-top: 10px;
+    			background-color: #F5F4F4;
+    			border: solid 1px #E4E4E4;
+    			color: #797979;
+    			cursor:pointer;
+			}
+
+			&:after { 
+
+				@include breakpoint(max-width $screen-md - 1) {
+					transition:0.3s;
+					content: '';
+				    right: 15px;
+				    position: absolute;
+				    height: 20px;
+				    width: 20px;
+				    top: 50%;
+				    margin-top: -10px;
+				    background-image:url('../images/svgs/arrow-gray.svg');
+	    			background-position: center;
+	    			background-size: contain;
+	    			transform: rotate(-90deg);
+				}
+			}
+
+			&.active {
+				&:after { 
+					transform: rotate(90deg);
+				}
+			}
+
+		}
+
+		ul {
+			counter-increment: listStyle;
+			position: relative;
+			font-size:em(14);
+
+			@include breakpoint(max-width $screen-md - 1) {
+				font-size:14px;
+				font-family:$ff-primary--light;
+				border-top: 1px solid #F3F3F3;
+			}
+
+
+			&:before { 
+				content: attr(data-text);  
+				position: absolute;
+				color:$pickout;
+
+				@include breakpoint(max-width $screen-md - 1) {
+				    right: 20px;
+				    top: 5px;
+				    font-size: 20px;
+				    width: 17px;
+				    height:30px;
+    				text-align: center;
+				}
+			}
+
+			li {
+				display:block;
+				padding-left:20px;
+				padding-bottom: 2px;
+
+				a {
+					color:#7a7a7a;
+
+					&:hover {
+						color:darken(#7a7a7a, 25%);
+					}
+
+					@include breakpoint(max-width $screen-md - 1) {
+						display: block;
+    					padding-top: 7.5px;
+    					padding-bottom: 7.5px;
+					}
+				}
+			}
+		}	
+	}
+
+}
+
+.aside-boot {
+	position: relative;
+	padding-right:0;
+	padding-left: 0;
+
+	@include breakpoint($screen-md) {
+		padding-right:15px;
+	}
+}
+
+.mobile-container-aside-labels {
+	@include breakpoint(max-width $screen-sm - 1) {
+		margin-top: 15px;
+	}
+
+	.aside-labels {
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-bottom: 0!important;
+		}
+	}
+}

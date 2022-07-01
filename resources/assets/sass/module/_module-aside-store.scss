@@ -1,0 +1,145 @@
+.aside-store {
+	@include container-fill();
+	padding:20px 15px;
+	margin-bottom: 20px;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	@include breakpoint(max-width $screen-md - 1) {
+		text-align: center;
+		padding-bottom: 10px;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		margin-bottom: 15px;
+	}
+
+	&-main {
+		
+		&__hdr {
+			font-size:em(17);
+			padding-bottom: 15px;
+		}
+
+		&__img {
+			height:150px;
+			margin-bottom:15px;
+			background-color:$light;
+                        @include background-contain();
+		}
+		.list {
+			padding-top: 15px;
+			padding-bottom: 5px;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				font-size:em(20);
+			}
+
+			.item {
+				display:block;
+				color:$pickout;
+				font-family: $ff-primary--semibold;
+				font-size: em(15);
+			}
+		}
+
+		&__btn {
+			padding: 8px 30px;
+			width:100%;			
+			margin-top: 7.5px;
+			margin-bottom: 7.5px;
+
+			&--second {
+				padding-top: 15px!important;
+				padding-bottom: 15px!important;
+			}
+
+			@include breakpoint(max-width $screen-lg - 1) {
+				font-size: em(12);
+    			padding: 8px 4px;
+    			border-width: 7px;				
+			}
+
+			@include breakpoint(max-width $screen-sm - 1) {
+    			display: block;
+    			margin: 0 auto;
+    			margin-bottom: 15px;
+    			max-width: 300px!important;		
+
+    			&:last-of-type {
+    				margin-bottom: 5px;
+    			}		
+			}
+		}
+
+		&__link {
+		    margin-bottom: 10px;
+		    margin-top: 5px;
+		    display: inline-block;		    		
+		}
+	}
+
+	&-qty {
+		text-transform:uppercase;
+		font-family: $ff-primary--semibold;
+		border-top:solid 1px #eaeaea;
+		border-bottom:solid 1px #eaeaea;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-left: 5px;
+    		padding-top: 13px;
+		}
+
+		&__para {
+			font-size:em(16);
+		}
+		&__number {
+			font-size:em(24);
+			color:$pickout;
+			letter-spacing:1px;
+		}
+	}
+
+	&-category {
+		.list {
+			font-size:em(14);
+			font-family: $ff-primary--semibold;
+			
+			.item {
+				display:block;
+				padding-bottom: 2.5px;
+				padding-top: 2.5px;
+
+				@include breakpoint(max-width $screen-md - 1) {
+					display: inline-block;
+    				padding-right: 25px;
+				}
+
+				a {
+					color:$dark;
+
+					&:hover {
+						color:#868686;
+					}
+				}
+			}
+		}
+
+		.social-container {
+			margin-top: 25px;
+			margin-bottom: 15px;
+
+			.btn-social {
+				margin-right: 11px;
+			}
+		}		
+	}
+}
+

@@ -1,0 +1,62 @@
+.aside-advert {
+	background-image:url('../images/legs-bg.png');
+	background-size:cover;
+	background-position:center;
+	color:$light;
+	text-align:center;
+	padding-top: 35px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 230px;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		display:none;
+	}
+
+	&__img {
+
+	}
+	&__hdr {
+		position: relative;
+		padding-top: 15px;
+		padding-bottom: 20px;
+		font-size:em(42);
+		line-height: 1.1;
+
+		&:after { 
+			content:'';
+			position: absolute;
+			border:solid 1px $light;
+			width:100%;
+			margin-left: -17.5px;
+			bottom:0;
+			left:50%;
+			width:35px;
+		}
+	}
+	&__subhdr {
+		font-family:$ff-primary--semibold;
+		font-size:em(20);
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	&__para {
+		font-family:$ff-secondary;
+		font-size:13px;
+		padding-bottom: 20px;
+		line-height: 1.7;
+	}
+	&__btn {
+	}
+}
+
+
+.mobile-container-aside-advert {
+
+	@include breakpoint(max-width $screen-md - 1) {
+		position: absolute;
+	    top: 0;
+	    width: 100%;   
+	}
+}

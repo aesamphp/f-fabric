@@ -1,0 +1,169 @@
+.mobile-head {
+    background-image: url(../images/hdr-bg.png);
+    padding: 20px 15px 30px 15px;
+    position: relative;
+
+    &-cross {
+    	position: absolute;
+	    width: 20px;
+	    margin-top: 5px;
+	    cursor:pointer;
+
+    	img {
+    		width:100%;
+    	}
+    }
+
+    &-logo {
+    	display: inline-block;
+	    width: 100%;
+	    text-align: center;
+		
+    	img {
+    		width:120px;
+    		margin-left: -20px;
+    	}
+    }
+
+    &-select {
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+        width: 70px;
+    	@include s2-height($height: 35px);
+
+    	.select2,
+        select {
+    		width:100%!important;
+    	}
+    }
+
+    &-search {
+    	margin-top: 25px;
+    	height: 40px;
+
+        button {
+            background-image: url(../images/svgs/search.svg);
+        }
+    }
+}
+
+.mobile-body {
+    
+    a {
+        display:block;
+
+        &:hover,
+        &:focus {
+            color:$light;
+            text-decoration:none;
+        }
+    }
+
+    &-menu {
+        .ui-accordion-content {
+            border-bottom:1px solid rgba(255, 255, 255, 0.45);
+        }
+
+        &__featured-btn {
+            width:100%;
+            text-align:center;
+            color:$light;
+            padding-top:20px;
+            padding-bottom: 20px;
+            text-transform:uppercase;
+            letter-spacing: 1px;
+            font-size: em(16);
+            font-family: $ff-primary--semibold;
+            border-bottom:1px solid rgba(255, 255, 255, 0.45);
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+        &__btn {
+            position: relative;
+            padding-top:20px;
+            padding-bottom: 20px;
+            padding-left:15px;
+            padding-right: 15px;
+            color:$light;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            border-bottom:1px solid rgba(255, 255, 255, 0.45);
+            outline:0;
+            cursor:pointer;
+
+            &:after { 
+                content:'';
+                transition:0.3s;
+                background-image: url(../images/svgs/arrow.svg);
+                transform: rotate(-180deg);
+                @include background-contain();
+                position: absolute;
+                right:15px;
+                height:15px;
+                width:15px;
+            }
+
+            &.no-arrow {
+                &:after { 
+                    display:none;
+                }
+            }
+
+            &.ui-state-active {
+                &:after { 
+                    transform: rotate(-90deg); 
+                }
+            }
+        }
+    }
+
+    &-submenu {
+        padding-left:15px;
+        padding-right: 15px;        
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        &__link {
+            color:$light;
+            padding-top: 7.5px;
+            padding-bottom: 7.5px;
+        }
+    }
+
+    .mobile-inner-menu {
+        padding-left:15px;
+        padding-right:15px;
+        padding-top: 10px;
+        padding-bottom: 10px;        
+        background-color: rgba(0, 0, 0, 0.1);
+        font-family:$ff-primary;
+
+        &__item {
+            display:block;
+            font-size: em(18);
+
+            a {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                color:$light;
+            }
+        }
+    }
+}
+
+.mobile-basket {
+    width: 35px;
+    height: 35px;
+    display: block;
+    float: right;
+    position: relative;
+    margin-top: 18px;
+    margin-right: 10px;    
+
+    .notification {
+        position: absolute;
+        top: -7.5px;
+        right: -7.5px;
+    }
+}

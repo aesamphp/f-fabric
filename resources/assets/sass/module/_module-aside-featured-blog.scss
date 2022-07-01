@@ -1,0 +1,9 @@
+.aside-featured-blog {
+	@include container-fill();
+	padding:20px;
+	margin-bottom: 25px;
+
+	&__hdr {
+		padding-bottom:20px;
+	}
+}

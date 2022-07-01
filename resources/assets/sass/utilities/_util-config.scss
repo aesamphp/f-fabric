@@ -1,0 +1,93 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+
+// FONT BASE
+//==========
+
+/* Font Source */
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.ttf'),
+         url('../fonts/OpenSans-Regular.woff');
+}
+
+@font-face {
+    font-family: 'GillSans-light';
+    src: url('../fonts/gillsans-light.ttf'),
+         url('../fonts/gillsans-light.woff');
+}
+
+@font-face {
+    font-family: 'GillSans-medium';
+    src: url('../fonts/gillsans-medium.ttf'),
+         url('../fonts/gillsans-medium.woff');
+}
+
+@font-face {
+    font-family: 'GillSans-semibold';
+    src: url('../fonts/gillsans-semibold.ttf'),
+         url('../fonts/gillsans-semibold.woff');
+}
+
+@font-face {
+    font-family: 'GillSans-bold';
+    src: url('../fonts/gillsans-bold.ttf'),
+         url('../fonts/gillsans-bold.woff');
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../fonts/Lato-Regular.ttf'),
+         url('../fonts/Lato-Regular.woff');
+}
+
+/* Font Family */
+$ff-primary			  : 'GillSans-medium', sans-serif;
+$ff-primary--light	  : 'GillSans-light', sans-serif;
+$ff-primary--semibold : 'GillSans-semibold', sans-serif;
+$ff-primary--bold     : 'GillSans-bold', sans-serif;
+$ff-secondary    	  : 'OpenSans', sans-serif;
+$ff-tertiary          : 'Lato-Regular', sans-serif;
+
+/* Font Weights */
+$fw-light        : 300;
+$fw-normal       : 400;
+$fw-semibold     : 600;
+$fw-bold         : 700;
+
+// Fonts Size
+$base-size : 16;
+
+
+// DESCRIPTIVE COLOUR BASE
+//========================
+
+/* Contrasts */
+$light           : #FFFFFF;
+$dark            : #1D1D1D;
+    
+
+/*  Social */
+$google        : #df5343;
+$facebook      : #3a5897;
+$twitter       : #00acec;
+$twitter-pale  : #54acee;
+$linkedin      : #027bb7;
+$youtube       : #bf221f;
+$instagram     : #cd5959;
+$pinterest     : #CB2027;
+$niagara       : #0AA89A;
+
+/* Theme colour values */
+$pickout         : #1bb5ae;
+$pickout-light   :lighten($pickout, 7%);
+$notif-red       : #e71b23;
+
+/* Image pathway */
+$path--rel : '../../images/svg';
+$path--rel-alt : '../../images';
+
+
+$screen-xxs: 321px;

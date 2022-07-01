@@ -1,0 +1,51 @@
+.aside-designer {
+	padding:15px;
+	max-width: 230px;
+	font-family:$ff-primary--semibold;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		max-width:none;
+		display:none;
+	}	
+
+	&__hdr {
+                word-break: break-all;
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-bottom: 0;
+		}
+	}
+
+	&__subhdr {
+		line-height: 1.2;
+		padding-top: 15px;
+
+		span {
+			text-transform:none!important;
+		}
+	}
+
+	&__img {
+		height:125px;
+		width:100%;
+		background-color:$light;
+                @include background-contain();
+	}
+
+	&__para {
+		color:#494949;
+		font-size:em(13);
+		line-height:1.5;
+		letter-spacing:0.5;
+		padding-top: 5px;
+		padding-bottom: 20px;
+	}
+
+	&-social {
+		&__btn {
+			margin-right:5px;
+		}
+	}
+
+	&__link {
+	}
+}

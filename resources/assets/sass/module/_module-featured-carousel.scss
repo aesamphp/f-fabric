@@ -1,0 +1,49 @@
+.featured-carousel {
+
+
+	&-single {
+		text-align:center;
+		height:400px;
+		background-color: #eee;
+		background-position:top!important;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			height:100%!important;
+			padding-top: 15px;
+		}
+
+		&__hdr {
+			max-width:775px;
+			margin:0 auto;
+			display:block;
+			padding-bottom: 60px;
+			margin-top:-25px;
+			line-height: 1.2;
+                        text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+
+			@include breakpoint(max-width $screen-md - 1) {
+				padding-left: 30px;
+    			padding-right: 30px;
+    			padding-bottom: 30px;
+			}
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				font-size: em(30);
+				line-height: 1;
+				padding-left: 10px;
+    			padding-right: 10px;				
+			}
+		}
+
+		&__btn {
+			@include breakpoint(max-width $screen-sm - 1) {
+				max-width: none!important;
+    			min-width: initial!important;
+    			width: 90%;
+    			padding-top: 10px;
+    			padding-bottom: 10px;
+			}
+		}
+	}
+}
+

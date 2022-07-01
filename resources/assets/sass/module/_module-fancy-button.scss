@@ -1,0 +1,69 @@
+.fancy-button {
+	padding:25px 35px 35px;
+	@include container-fill(); 
+	
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left: 15px;
+    	padding-right: 15px;
+	}
+
+	&__hdr {
+		padding-bottom:15px;
+		border-bottom:solid 1px #E0E0E0;
+    	margin-bottom: 15px;
+		
+		@include breakpoint(max-width $screen-md - 1) {
+			text-align:center;
+		}
+	}
+	&__img {
+    	display: block;
+    	margin: 0 auto;
+    	margin-top: 30px;
+    	margin-bottom: 25px;
+    	width: 100%;	
+    	max-width: 350px;
+	}
+
+	&__para {
+		font-size:em(22);
+		letter-spacing:1px;
+		font-family:$ff-primary--semibold;
+		margin-bottom: 23px;
+		text-align:center;
+	}
+
+	&__sub-para {
+		padding-bottom: 5px;
+		span {
+			font-size: em(18);
+			font-family: $ff-primary--semibold;
+		}
+	}
+
+	&__btn {
+    	display: block;
+    	max-width: 200px;
+    	margin: 0 auto;		
+    	margin-top: 15px;
+	}
+
+	&-carousel {
+		margin-top: 40px;
+
+		.sly-item {
+			width: 270px!important;
+			margin-right: 20px;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				width:250px!important;
+			}
+		}
+
+		&__product {
+			width:100%;
+			padding-left: 0;
+		}
+	}
+}
+

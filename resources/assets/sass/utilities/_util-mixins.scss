@@ -1,0 +1,66 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+
+// Image replacement
+
+@mixin webkit-line-clamp($clamp: 5, $height: 120px) {
+	overflow: hidden;
+    height: $height;
+    -webkit-line-clamp: $clamp;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;	
+    overflow:hidden;
+}
+
+@mixin s2-height($height: 35px) {
+	.select2-selection {
+		&__rendered {
+    		line-height:#{$height}!important;
+    	}
+    	&__arrow {
+    		height:#{$height}!important;
+    	}
+	}	
+}
+
+@mixin svg($name, $pos: center center, $size: 100% auto, $repeat:no-repeat, $colour:transparent) {
+	background:$colour url('#{$path--rel}/#{$name}.svg') #{$repeat} #{$pos};
+	background-size: #{$size};
+	
+	.no-svg & {
+		background-color:$colour;
+		background-image:url('#{$path--rel-alt}/#{$name}.png');
+		background-repeat:#{$repeat};
+		background-position:#{$pos};
+		background-size:#{$size};
+	}
+}
+
+@mixin png($name, $pos: center center, $size: cover, $repeat:no-repeat) {
+		background:url('#{$path--rel-alt}/#{$name}.png') #{$repeat} #{$pos};
+		background-size: #{$size};
+}
+
+@mixin container-fill() {
+	background-color:$light;
+}
+
+@mixin background-cover($pos:center) {
+	background-size:cover;
+	background-position:$pos;
+	background-repeat:no-repeat;
+}
+
+@mixin background-contain() {
+	background-size:contain;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+@mixin background-size($size:50%) {
+	background-size:$size;
+	background-position:center;
+	background-repeat:no-repeat;
+}

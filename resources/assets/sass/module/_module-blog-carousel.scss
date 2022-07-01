@@ -1,0 +1,63 @@
+.blog-carousel {
+	@include container-fill();
+	padding:25px 35px 25px 35px;
+	min-width:820px;
+	position: relative;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		min-width: initial;
+	}	
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.sly-content .sly-item {
+	    width: 360px!important;
+	    margin-right: 20px;
+
+	    @include breakpoint(max-width $screen-lg - 1) {
+	    	width:305px!important;
+	    }
+
+	    @include breakpoint(max-width $screen-xs - 1) {
+	    	width: 240px!important;
+	    }
+	}
+
+	&__hdr {
+		display:inline-block;
+		padding-bottom: 25px;
+	}
+
+	&-list {
+		margin-right: 20px;
+		
+		&__item {
+			padding-left: 0;
+			padding-right: 0;
+			margin-left:20px;			
+
+			&:first-of-type {
+				margin-left: 0;
+			}
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.sly-next {
+		right:5px;
+	}
+	.sly-prev {
+		left: 0px;
+	}	
+}
+
+
+
+
+

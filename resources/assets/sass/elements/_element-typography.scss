@@ -1,0 +1,104 @@
+.hdr-main {
+	font-family:$ff-primary;
+	font-size:em(50);
+	color:$light;
+	letter-spacing:2px;	
+
+	@include breakpoint(max-width $screen-md - 1) {
+		font-size:em(45);
+	}	
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		font-size:em(40);
+	}
+}
+.sub-main {
+	font-size:em(48);
+	line-height:1;
+	letter-spacing:1px;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		font-size:em(35);
+	}	
+}
+
+.hdr-section {
+	font-size:em(23);
+	text-transform:uppercase;
+	font-family:$ff-primary--semibold;
+
+	&--minor {
+		@extend .hdr-section;
+		font-size:em(20);
+	}
+}
+
+.hdr-input {
+	font-size:em(15);
+	font-family:$ff-primary--semibold;
+	padding-bottom:8px;
+}
+
+.hdr-aside {
+	color:$pickout-light;
+	text-transform:uppercase;
+	padding-bottom: 15px;
+	padding-top: 2px;	
+
+	&--black {
+		color:$dark;
+	}
+
+	&--minor {
+		font-size:em(16);
+	}
+}
+
+.hdr-social {
+	position: relative;
+	margin-left: 40px;
+	display:inline-block;
+
+	&:before { 
+		content:'';
+		left:-40px;
+		top: 50%;
+		margin-top: -12.5px;				
+		position: absolute;
+		height:25px;
+		width:25px;
+	}		
+}
+
+.hdr-input-type {
+	color:#656565;
+	font-size:em(14);
+	text-transform:uppercase;
+	line-height: 1.2;
+	padding-top: 2px;
+
+	&--minor {
+		@extend .hdr-input-type;
+		font-size:em(10);
+	}	
+}
+
+.para-main {
+    font-size: em(13);
+    color: #494949;
+    line-height: 1.8;	
+}
+
+.para-side {
+	font-family:$ff-primary--semibold;
+	color:$pickout-light;
+	line-height: 1.2;
+	padding-top: 5px;
+	padding-bottom: 15px;	
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		float: right;
+    	margin-right: 10px;
+    	margin-top: 5px;
+	}
+}

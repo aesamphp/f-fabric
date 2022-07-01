@@ -1,0 +1,144 @@
+.info-video {
+	@include container-fill();
+	padding:30px 35px 30px 35px;
+	margin-bottom:50px;
+
+	&--mar-15 {
+		margin-bottom: 15px;
+	}
+
+	&--centered {
+
+		.info-video-player {
+			max-width: 625px;
+	    	margin: 0 auto;
+		}
+
+		.info-video-textarea {
+			&__hdr {
+				text-align: center;
+    			padding-bottom: 25px;
+
+    			@include breakpoint(max-width $screen-sm - 1) {
+    				padding-top: 15px;
+    			}
+			}
+		}
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-top: 15px;
+		padding-left:15px;
+		padding-right:15px;
+		margin-bottom: 0;
+	}
+
+	&-player {
+		overflow: hidden;
+    	position: relative;
+
+    	&:hover {	
+
+    	}
+
+    	&.hover-out {
+    		.info-video-player__play {
+	    		opacity:0!important;    			
+    		}
+
+    		&:hover {
+	    		.info-video-player__play {
+		    		opacity:0.2!important;    			
+	    		}    			
+    		}
+    	}
+
+    	&__video {
+			width: 100%;
+	    	height: auto;	
+
+    	}
+
+		&__play {
+			transition: opacity 0.3s;
+		    height: 100px;
+		    width: 100px;
+		    border: 3px solid $light;
+		    border-radius: 50%;
+		    display: block;
+		    position: absolute;
+		    left: 50%;
+		    margin-left: -50px;
+		    top: 50%;
+		    margin-top: -50px;	
+		    z-index:100;
+			background-image:url('../images/svgs/pause.svg');
+		    cursor:pointer;
+			opacity: 0.2;
+			background-repeat:no-repeat;
+			background-position: center;
+			background-size: 35%;				
+			transform:rotate(0deg);
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				height:50px;
+				width:50px;
+				margin-left:-25px;
+				margin-top: -25px;
+			}
+
+		    &.paused {
+		    	background-image:url('../images/svgs/play.svg');
+		    	transform:rotate(90deg);
+				opacity:1;
+				background-size: 50%;	
+		    	background-position:center 40%;
+		    }
+		}	
+
+		&__darken {
+			transition:0.3s;
+		    position: absolute;
+		    top: -6px;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background-color:transparent;
+
+		    &.fade {
+		    	background-color: rgba(0, 0, 0, 0.35);
+		    }
+		}
+	}
+
+	&-textarea {
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-left:0px;
+			padding-right:0px;
+			padding-top: 15px;
+		}		
+
+		&__hdr {
+			font-family:$ff-primary--semibold;
+			font-size:em(26);
+			text-transform:uppercase;
+		}
+		&__para {
+			font-size:em(13);
+			color:#494949;
+			line-height:1.8;
+			padding-top: 20px;
+			padding-bottom: 30px;
+		}
+
+		&__btn {
+			font-size: em(12);
+			padding: 8px 16px;	
+
+			@include breakpoint(max-width $screen-xs - 1) {
+				min-width:100%;
+			}		
+		}
+	}
+}

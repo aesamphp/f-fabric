@@ -1,0 +1,43 @@
+$tag-colour1: #f91528;
+$tag-colour2: #307ab6;
+$tag-colour3: #139717;
+
+.tag {
+	position: relative;
+	display:inline-block;
+	padding:0px 45px 0px 15px;
+	color:$light;
+	font-family: $ff-primary--semibold;
+	font-size: em(12);
+	text-transform: uppercase;
+	background-color:$tag-colour1;
+	letter-spacing:1px;
+	line-height: 30px;
+	cursor: default;
+	transition: 0.3s;
+	margin:2.5px;
+
+	&:hover {
+		opacity:0.5;
+	}
+
+	&:nth-of-type(2n+0) {
+		background-color:$tag-colour2;
+	}
+
+	&:nth-of-type(3n+0) {
+		background-color:$tag-colour3;
+	}	
+
+	.delete { 
+		position: absolute;
+		@include background-contain();
+		background-image:url('../images/svgs/delete-white.svg');
+    	height: 12px;
+    	width: 12px;
+    	right:10px;
+    	top:50%;
+    	margin-top:-6px;
+    	cursor:pointer;
+	}
+}

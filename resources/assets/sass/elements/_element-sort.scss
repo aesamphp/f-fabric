@@ -1,0 +1,50 @@
+.sort {
+	position: absolute;
+	background-color:$light;
+	border:solid 1px #cccccc;
+	color:#545454;
+    width: 100%;
+    padding: 8px 18px;
+    display:none;
+    z-index: 1;
+
+
+    &.active {
+    	display:block;
+
+	    @include breakpoint(max-width $screen-md - 1) {
+	    	display:none;
+	    }
+    }
+
+	&__hdr {
+		font-family: $ff-primary--semibold;
+		font-size: em(13);
+		padding-bottom: 7px;
+		position: relative;
+
+		&:after { 
+			content:'';
+		    position: absolute;
+		    height: 5px;
+		    width: 8px;
+		    right: 0;
+		    margin-left: -4px;
+		    top: 50%;
+		    margin-top: -6px;
+		    border-color: transparent transparent #888;
+		    border-width: 0 4px 5px;
+		    border-style: solid;			
+		}		
+	}
+
+	&__check {
+		font-size: em(13);
+		padding-bottom: 8px;
+
+		.checkbox-text {
+			padding-bottom: 0;
+    		padding-top: 2px;
+		}
+	}
+}

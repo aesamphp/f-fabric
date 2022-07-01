@@ -1,0 +1,1176 @@
+/* BLOCK FORMATTING */
+.no-underline {
+  text-decoration: none;
+}
+
+.container.container-global {
+  width: 100%;
+  max-width: 1200px;
+
+  &.container-padding {
+    padding-right: 100px;
+    padding-left: 100px;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  .container-dotted-pattern {
+    @include breakpoint(min-width $screen-md - 1) {
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 244px;
+        top: 0;
+      }
+
+      &:before {
+        background-image: url('../images/dotted-line-before.png');
+        left: -244px;
+      }
+
+      &:after {
+        background-image: url('../images/dotted-line-after.png');
+        right: -244px;
+      }
+    }
+  }
+}
+
+.container-fill-sm {
+  @include breakpoint(max-width $screen-md - 1) {
+    background-color: $light;
+  }
+}
+
+.block-center {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.vertical-outer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.vertical-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+
+  &-lg {
+    @extend .right;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      position: static;
+    }
+  }
+}
+
+.left {
+  position: absolute;
+  left: 0;
+
+  &-lg {
+    @extend .left;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      position: static;
+    }
+  }
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+
+  &-xs {
+    @include breakpoint(max-width $screen-xs - 1) {
+      text-align: center;
+    }
+  }
+}
+
+.no-mar-sm {
+  @include breakpoint(max-width $screen-md - 1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @include breakpoint(max-width $screen-md - 1) {
+    display: block;
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @include breakpoint($screen-md) {
+    display: block;
+  }
+}
+
+.popup {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+/* BOOTSTRAP */
+.no-pad {
+  padding-left: 0;
+  padding-right: 0;
+
+  &-lg {
+    @include breakpoint($screen-lg) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &-md {
+    @include breakpoint($screen-sm) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.add-pad {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.no-pad-left {
+  padding-left: 0;
+
+  &-lg {
+    @include breakpoint($screen-lg) {
+      padding-left: 0;
+    }
+  }
+
+  &-md {
+    @include breakpoint($screen-md) {
+      padding-left: 0;
+    }
+  }
+
+  &-sm {
+    @include breakpoint($screen-sm) {
+      padding-left: 0;
+    }
+  }
+}
+
+.no-pad-right {
+  padding-right: 0;
+
+  &-md {
+    @include breakpoint($screen-md) {
+      padding-right: 0;
+    }
+  }
+
+  &-sm {
+    @include breakpoint($screen-sm) {
+      padding-right: 0;
+    }
+  }
+}
+
+.no-pad-bottom {
+  padding-bottom: 0 !important;
+}
+
+.padding-bottom-15 {
+  padding-bottom: 15px;
+}
+
+.no-mar {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.minus-mar {
+  margin-left: -45px;
+
+  @include breakpoint(max-width $screen-lg - 1) {
+    margin-left: 0;
+  }
+}
+
+.col-absolute {
+  position: absolute;
+  top: 0;
+  height: 100%;
+
+  &-left-xs {
+    @extend .col-absolute;
+    left: 0;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      position: static;
+    }
+
+  }
+
+  &-right-xs {
+    @extend .col-absolute;
+    right: 0;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      position: static;
+    }
+  }
+}
+
+.col-xs-5th,
+.col-sm-5th,
+.col-md-5th,
+.col-lg-5th {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-xs-5th {
+  float: left;
+  width: 19%;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5th {
+    float: left;
+    width: 19.5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5th {
+    float: left;
+    width: 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-5th {
+    float: left;
+    width: 20%;
+  }
+}
+
+/* Allows vertical alignment when bootstrap is applied (ADD TO CONTAINER CLASS) */
+.vertical-bootstrap {
+  height: inherit;
+
+  div[class^="col"],
+  div[class^="row"] {
+    height: inherit;
+  }
+}
+
+/* STYLING */
+.notification {
+  color: $light;
+  background-color: $notif-red;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 50%;
+  padding-left: 1px;
+  padding-top: 1px;
+  z-index: 1;
+}
+
+.section-fill {
+  background-color: $light;
+  margin-bottom: 25px;
+
+  @include breakpoint(max-width $screen-md - 1) {
+    margin-bottom: 1px;
+  }
+}
+
+.background-darken {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* PAINTING */
+
+/* PAGE TYPE */
+
+.extra-margin {
+  margin-top: 25px;
+  margin-bottom: 45px;
+
+  @include breakpoint(max-width $screen-md - 1) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.home {
+  .sly-carousel {
+    @include breakpoint(max-width $screen-sm - 1) {
+      max-height: 260px;
+    }
+
+    .sly-bullets {
+      @include breakpoint(max-width $screen-sm - 1) {
+        display: none;
+      }
+    }
+  }
+
+  .aside-labels,
+  .aside-advert {
+    max-width: 195px;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      max-width: none;
+    }
+  }
+
+  .aside-advert__btn {
+    min-width: initial;
+  }
+}
+
+.page-upload {
+  .container-dotted-pattern {
+    padding-top: 25px;
+    padding-bottom: 45px;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.page-edit,
+.page-edit-my-designs {
+  .container-dotted-pattern {
+    padding-top: 25px;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      padding-top: 0;
+    }
+  }
+
+  .info-video {
+    margin-top: 20px !important;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      display: none;
+    }
+  }
+}
+
+.page-edit {
+  .aside-boots {
+    @include breakpoint(max-width $screen-sm - 1) {
+      display: none;
+    }
+  }
+}
+
+.shop-category-page {
+
+  .section-fill.pad-adjust {
+    padding-left: 15px;
+    padding-top: 20px !important;
+    padding-right: 15px;
+    margin-bottom: 0 !important;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      margin-top: 20px !important;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-top: 15px !important;
+    }
+  }
+
+  .pagination {
+    padding-left: 30px;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      padding-left: 0;
+    }
+  }
+}
+
+.shop-category-page,
+.shop-designer-store-page {
+  .aside-labels {
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-top: 0px;
+    }
+  }
+}
+
+.shop-altlas-page,
+.shop-samples-page {
+  .container-dotted-pattern {
+    padding-top: 25px;
+    padding-bottom: 60px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.shop-designer-store-page {
+  .container-dotted-pattern {
+    padding-top: 35px;
+    padding-bottom: 55px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .section-fill.pad-adjust {
+    padding: 30px 15px 0 15px;
+    margin-bottom: 0 !important;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      margin-top: 20px !important;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-top: 15px !important;
+    }
+  }
+
+  .aside-checklist {
+    @include breakpoint(max-width $screen-md - 1) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.page-update-shop {
+  .container-dotted-pattern {
+    padding-top: 35px;
+    padding-bottom: 55px;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.shop-main-info-page {
+  .container-dotted-pattern {
+    padding-top: 35px;
+    padding-bottom: 55px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .inner-section-bottom {
+    margin-top: 25px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-top: 15px;
+    }
+
+    .boot-style-1 {
+      @include breakpoint(max-width $screen-md - 1) {
+        padding-right: 0;
+      }
+
+      @include breakpoint(max-width $screen-sm - 1) {
+        padding-right: 15px;
+      }
+    }
+
+    .boot-style-2 {
+      @include breakpoint(max-width $screen-md - 1) {
+        padding-left: 1px;
+      }
+      @include breakpoint(max-width $screen-sm - 1) {
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+.contribute-page {
+  .container-dotted-pattern {
+    padding-bottom: 25px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.favorites-page {
+  @include breakpoint(max-width $screen-sm - 1) {
+    .products-grid-tile {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.community-page,
+.weekly-contest-page,
+.favorites-page {
+  .container-dotted-pattern {
+    padding-bottom: 55px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-bottom: 0;
+    }
+  }
+
+  .two-sections {
+    margin-top: 20px;
+    min-width: 820px;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      min-width: 100%;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-top: 15px;
+    }
+
+    .boot-style-1 {
+      padding: 0;
+    }
+
+    .boot-style-2 {
+      padding: 0;
+    }
+  }
+
+  .blog-carousel-list {
+    .boot-style-1 {
+      padding: 0;
+      padding-right: 10px;
+    }
+
+    .boot-style-2 {
+      padding: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .inner-section-whole {
+    margin-top: 10px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-top: 0;
+    }
+  }
+}
+
+.my-studio,
+.my-designs {
+  .container-dotted-pattern {
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .sidebar {
+    min-width: 310px;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      min-width: auto;
+    }
+  }
+
+  .boot-style {
+    padding-left: 30px;
+    padding-right: 0;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      padding-left: 0;
+    }
+  }
+
+}
+
+.products-grid-likes {
+  .blog-listing {
+    img {
+      width: auto !important;
+    }
+  }
+}
+
+.my-studio {
+  .products-grid-likes {
+    padding-top: 20px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-bottom: 15px;
+    }
+
+    .products-grid-tile {
+      margin-bottom: 0px !important;
+
+      @include breakpoint(max-width $screen-lg - 1) {
+        margin-bottom: 15px !important;
+      }
+    }
+
+    .boot-style {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
+    }
+  }
+
+  .products-grid-tile {
+    @include breakpoint(max-width $screen-lg - 1) {
+      margin-bottom: 15px;
+      max-width: none !important;
+    }
+  }
+}
+
+.my-designs {
+  .aside-store-main {
+    .list {
+      padding-top: 5px;
+    }
+  }
+
+  .aside-store-category {
+    .list {
+      padding-top: 15px;
+    }
+  }
+
+  .design-approvals {
+    .boot-style {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.page-edit-my-designs {
+
+  @include breakpoint(max-width $screen-sm - 1) {
+    .aside-boots {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .aside-checklist {
+    max-width: 250px;
+    margin-bottom: 15px;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      max-width: none;
+      margin-bottom: 15px;
+    }
+
+    @include breakpoint(max-width $screen-md - 1) {
+      margin-top: 1px;
+      box-shadow: none;
+      margin-bottom: 0;
+    }
+
+    &__hdr {
+      padding-bottom: 10px;
+    }
+
+    &__check {
+      width: 100%;
+    }
+
+    .checkbox-text {
+      font-family: $ff-primary;
+
+      &.text-red {
+        color: #f01e1e;
+      }
+
+      &.text-yellow {
+        color: #fd9826;
+      }
+
+      &.text-green {
+        color: #1cbcb4;
+      }
+    }
+  }
+}
+
+.page-your-basket {
+  .main-content-area {
+    padding: 35px 45px 50px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 45px;
+    }
+  }
+}
+
+.page-your-basket,
+.page-payment,
+.page-delivery-address,
+.page-order-review,
+.page-confirmation,
+.page-contact,
+.page-blog,
+.page-blog-single {
+  .container-dotted-pattern {
+    padding-bottom: 50px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-bottom: 0;
+    }
+  }
+
+  .featured-banner {
+    margin-bottom: 20px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.page-order-review {
+  .checkout-input__hdr {
+    @include breakpoint(max-width $screen-sm - 1) {
+      text-align: center;
+    }
+  }
+}
+
+.page-order-review,
+.page-confirmation {
+
+  .head-col.fourth {
+    padding-left: 10px;
+  }
+
+  .shopping {
+    margin-bottom: 40px;
+  }
+
+  .checkbox-text {
+    color: #242424;
+    font-family: $ff-primary--semibold;
+    font-size: em(12);
+  }
+
+  .field-group {
+    margin-top: 15px;
+
+    label {
+      font-size: em(12);
+      font-family: $ff-primary;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      max-width: 345px;
+    }
+  }
+
+  @include breakpoint(max-width $screen-sm - 1) {
+    .boot-style-order-basket {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .shopping-basket {
+
+      .head,
+      .body {
+        .single-row {
+          padding-left: 15px !important;
+        }
+
+        .fourth {
+          text-align: right;
+        }
+      }
+
+      .head {
+        padding-right: 10px;
+      }
+
+      .head-col.fourth {
+        padding-left: 0;
+      }
+
+      .body {
+        .boot-style {
+          display: none !important;
+        }
+
+        .body-col__total {
+          padding-right: 10px;
+        }
+
+        .body-col-textarea {
+          margin-left: 15px;
+          padding-right: 20px;
+          padding-left: 10px;
+        }
+
+        .second {
+          margin-left: 0 !important;
+        }
+      }
+
+      .row-minus-25 {
+        margin-right: -25px;
+      }
+    }
+  }
+
+}
+
+.page-confirmation {
+  .padded-dotted-line {
+    margin-bottom: 0 !important;
+  }
+
+  .confirm-back {
+    float: left;
+
+  }
+}
+
+.page-account-settings {
+  .container-dotted-pattern {
+    padding-top: 25px;
+    padding-bottom: 15px;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .list.address {
+    padding-top: 15px;
+    padding-bottom: 30px;
+
+    .item {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+  }
+
+  .delete-form {
+    margin-top: 10px;
+  }
+}
+
+.page-orders-and-sales,
+.page-delivery-and-returns,
+.page-faqs {
+  .container-dotted-pattern {
+    padding-bottom: 40px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-bottom: 0;
+    }
+  }
+
+  .latest-products__btn {
+    margin-top: 50px;
+  }
+}
+
+.page-about {
+  .featured-textarea {
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.global-container {
+  position: relative;
+
+  &:after {
+    content: '';
+    transition: 0.5s;
+    background-color: transparent;
+  }
+
+  &.mobile-on {
+    height: 100%;
+    overflow: hidden;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(29, 29, 29, 0.4);
+      z-index: 10000;
+    }
+
+    @include breakpoint($screen-md) {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  transition: transform .3s ease-in-out;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: $pickout;
+  background-image: url("../images/tile-pickout.png");
+  transform: translateX(-100%);
+  z-index: 100000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.mobile-on {
+    transform: translateX(-15%);
+    padding-left: 15%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+
+    @include breakpoint(max-width $screen-xxs - 1) {
+      transform: translateX(-5%);
+      padding-left: 5%;
+    }
+  }
+}
+
+.page-your-basket {
+  .body-col-textarea {
+    &__item,
+    &__type,
+    &__code {
+      @include breakpoint(max-width $screen-sm - 1) {
+        display: none;
+      }
+    }
+
+    .mobile-only-image {
+      @include breakpoint($screen-sm) {
+        display: none;
+      }
+
+      &__img {
+        @include background-cover();
+        height: 85px;
+        width: 85px;
+      }
+    }
+  }
+
+  @include breakpoint(max-width $screen-sm - 1) {
+    .item-update-form,
+    .item-delete-form {
+      width: 100%;
+      text-align: center;
+
+      .body-col__input {
+        margin: 0 auto;
+        max-width: 50%;
+      }
+
+      .body-col__link {
+        display: block;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.mobile-only-text {
+
+  @include breakpoint($screen-sm) {
+    display: none;
+  }
+
+  .body-col-textarea__item {
+    padding-top: 5px;
+  }
+
+  p {
+    color: $dark !important;
+    display: block !important;
+    word-break: break-word !important;
+    padding-right: 27px !important;
+  }
+}
+
+.shop-main-info-page {
+  .comments {
+    padding-top: 25px;
+  }
+}
+
+.coming-soon {
+  color: $dark !important;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  letter-spacing: 0px !important;
+  font-size: em(38);
+
+  &__img {
+    @include background-cover();
+    background-position: top;
+    background-image: url("../images/flower-dress.png");
+    height: 400px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.thumb-image-contain {
+  background-size: 75%;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+}
+
+.loader {
+  display: block;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 0.6em solid rgba(255, 255, 255, 0.2);
+  border-right: 0.6em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.6em solid rgba(255, 255, 255, 0.2);
+  border-left: 0.6em solid #1cbbb4;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.design-options-input,
+.design-options-input * {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.cms-editor-content {
+  img {
+    @extend .img-responsive;
+  }
+  td {
+    border: 1px solid #000;
+    padding: 10px;
+  }
+}
+
+.zoomContainer {
+  z-index: 99;
+}
+
+.background-text-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.featured-carousel-single {
+  padding-top: 0 !important;
+}
+
+.fade {
+  opacity: .5;
+}

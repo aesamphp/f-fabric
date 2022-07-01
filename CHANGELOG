@@ -1,0 +1,74 @@
+- v1.2.2  - CMS Blocks - EM - 12/1/17
+
+# Change Log
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/) 
+and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [x.x.x] - 2017-02-25
+### Added: Add new administrators / managers and restrict their visibility in the site.
+- $ php artisan db:seed --class=EnquirySeeder
+
+## [x.x.x] - 2017-02-24
+### Added: Sort and search enquiries in CMS by date and person @eric
+- $ php artisan db:seed --class=EnquirySeeder
+
+## [x.x.x] - 2017-02-23
+### Added: Cmsable home page blocks @eric
+- $ php artisan migrate; php artisan db:seed --class=BlockSeeder
+
+## [x.x.x] - 2017-02-24
+### Added: Sort and search enquiries in CMS by date and person @eric
+- $ php artisan db:seed --class=EnquirySeeder
+
+## [x.x.x] - 2017-02-24
+### Added: Add repeat_type field to order items
+- $ ALTER TABLE `order_items` ADD `repeat_type` INT(10) UNSIGNED NULL DEFAULT NULL AFTER `material_id`;
+- $ ALTER TABLE `order_items` ADD KEY `order_items_repeat_type_foreign` (`repeat_type`);
+- $ ALTER TABLE `order_items` ADD CONSTRAINT `order_items_repeat_type_foreign` FOREIGN KEY (`repeat_type`) REFERENCES `design_types` (`id`);
+
+## [x.x.x] - 2017-03-24
+### Added: quantity field to discount codes
+- $ ALTER TABLE `discount_codes` ADD `quantity` JSON NULL DEFAULT NULL AFTER `min_value`;
+
+## [x.x.x] - 2017-04-13
+### Added: quantity rules for product materials
+
+## [x.x.x] - 2017-04-20
+### Added: Change product basket weight calculation
+           Add product_weight field to order items
+           Modify order XML file
+- $ ALTER TABLE `order_items` ADD `product_weight` DOUBLE(8,2) NOT NULL AFTER `unit_price`;
+- $ ALTER TABLE `materials` ADD `machine_name` VARCHAR(255) NULL DEFAULT NULL AFTER `description`, ADD `profile` VARCHAR(255) NULL DEFAULT NULL AFTER `machine_name`;
+- $ UPDATE `products` SET `weight`= 1 WHERE `category_id` != 6;
+
+## [x.x.x] - 2017-05-09
+### Added: actual_amount and vat fields to orders
+- $ ALTER TABLE `orders` ADD `actual_amount` DOUBLE(8,2) NOT NULL AFTER `txType`;
+- $ ALTER TABLE `orders` ADD `vat` DOUBLE(8,2) NOT NULL AFTER `bankAuthCode`;
+
+## [x.x.x] - 2017-08-16
+### Added: type_id field to sales
+- $ ALTER TABLE `sales` ADD `type_id` INT(10) UNSIGNED NOT NULL DEFAULT '1' AFTER `order_item_id`;
+
+## [x.x.x] - 2017-11-30
+### Added: Cmsable About Us
+- $ php artisan migrate; php artisan db:seed --class=AboutUsSeeder
+
+## [1.22.1] - 2017-12-12
+### Added: group_id field to discount_codes
+- $ ALTER TABLE `discount_codes` ADD `group_id` VARCHAR(255) NULL AFTER `id`;
+
+## [1.22.2] - 2018-02-27
+### Added: sort to carousel_slides
+- $ ALTER TABLE `carousel_slides` ADD COLUMN `sort` VARCHAR(255) NULL AFTER `content`;
+
+## [1.22.3] - 2018-02-27
+### Added: display_type to blocks
+- $ ALTER TABLE `blocks` ADD COLUMN `display_type` VARCHAR(255) NULL AFTER `image_path`;
+
+## [1.22.4] - 2018-04-16
+### Added: created rows
+           created row_designs
+- $ Created rows and row_design tables

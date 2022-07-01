@@ -1,0 +1,300 @@
+.shopping {
+
+	&-delivery-type {
+		font-size: em(13);
+		color:#1b1b1b;
+		padding-top: 25px;
+		padding-bottom: 25px;
+
+		span {
+			font-family: $ff-primary--semibold;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			text-align:center;
+		}		
+	}
+
+	&__hdr {
+		font-size:em(18);
+		padding-bottom: 20px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left: 15px;
+    		padding-bottom: 30px;
+		}
+	}
+
+	&__para {
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+
+	&-basket {
+
+		.head {
+			background-color:#e0e8e9;
+			font-family: $ff-primary--semibold;
+			font-size: em(14);
+
+			.single-row {
+				padding-top: 8px;
+				padding-bottom: 8px;
+				padding-left:20px;
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					padding-left: 5px;
+					padding-bottom: 15px;
+				}
+			}
+
+			&-col {
+
+				&.image {
+				}
+				&.first {
+				}
+				&.second {
+				}
+				&.third {
+					@include breakpoint(max-width $screen-sm - 1) {
+						display:none;
+					}
+				}
+				&.fourth {
+				}
+			}
+		}
+
+		.body {
+			color:#656565;
+
+			.single-row {
+				background-color:#f6f6f6;
+				margin-bottom:10px;
+				padding-top:20px;
+				padding-bottom: 20px;
+				padding-left:20px;
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					margin-bottom: 5px;
+
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+
+					&:nth-of-type(even) {
+						background-color:$light;
+					}
+				}
+			}
+
+			&-col {
+
+				&-textarea {
+					line-height: 1.4;
+					margin-left: 45px;
+					padding-left: 15px;
+					padding-right: 20px;
+
+					@include breakpoint(max-width $screen-lg - 1) {
+						margin-left: 60px;
+						max-width: 220px;
+						padding-right: 0;
+					}
+
+					@include breakpoint(max-width $screen-md - 1) {
+						margin-left: 45px;
+    					max-width: 175px;						
+					}
+
+					@include breakpoint(max-width $screen-sm - 1) {
+						margin-left: 20px;
+						padding-left: 0;
+					}
+
+					&__item {
+						font-family: $ff-primary--bold;
+						font-size:em(13);
+						word-break: break-all;
+					}
+					&__type {
+						font-family: $ff-primary--semibold;
+						font-size:em(13);
+						word-break: break-all;
+					}
+					&__code {
+						font-family: $ff-primary--semibold;
+						font-size:em(13);
+						word-break: break-all;
+					}
+				}
+
+				&.image {
+					position: relative;
+					height:105px;
+					width:105px;
+    				z-index: 10;	
+    				background-color: $dark;	
+    				overflow: hidden;	
+    				background-size: cover;
+    				background-position: center;
+                                background-repeat: no-repeat;
+
+					@include breakpoint(max-width $screen-md - 1) {
+						height:75px;
+						width: 75px;
+					}
+
+					@include breakpoint(max-width $screen-sm - 1) {
+						display:none;
+					}
+
+					&:after { 
+						content:'';
+						transition: 0.3s;
+						position: absolute;
+						height:40px;
+						width:40px;
+						background-image:url("../images/magnify.png");
+						@include background-contain();
+						top:50%;
+						left:50%;
+						margin-left: -20px;
+						margin-top: -20px;
+						opacity:0;
+						pointer-events:none;
+					}
+
+					img {
+						transition: 0.3s;
+					}
+
+					&:hover {
+
+						&:after { 
+							opacity:1;
+						}
+
+						img {
+							opacity:0.5;	
+						}
+					}
+
+				}
+				&.first {
+				}
+				&.second {
+					@include breakpoint(max-width $screen-sm - 1) {
+						margin-left:0;
+					}
+				}
+				&.third {
+					@include breakpoint(max-width $screen-sm - 1) {
+						display:none;
+					}
+				}
+				&.fourth {
+					@include breakpoint(max-width $screen-sm - 1) {
+					    text-align: right;
+					}
+				}				
+				&.full {
+					color:#7d7d7d;
+					border-top:#e0e0e0 solid 1px;
+					margin-left: 45px;
+					margin-right: 25px;
+				    padding-top: 10px;
+				    margin-top: 5px;
+
+					@include breakpoint(max-width $screen-lg - 1) {
+						margin-left: 60px;
+					}
+
+					@include breakpoint(max-width $screen-sm - 1) {
+					    margin-left: 0;
+					    margin-right: 0;
+					    text-align: right;
+					    margin-top: 10px;
+					}
+				}
+
+				&__input {
+					max-width:40px;
+					text-align:center;
+					font-family: $ff-tertiary;
+					font-size: em(12);
+    				padding: 0;
+    				height: 30px;
+    				line-height: 30px;	
+
+    				@include breakpoint(max-width $screen-md - 1) {
+    					display:block;
+    					margin-bottom: 5px;
+    				}	
+
+    				@include breakpoint(max-width $screen-xxs - 1) {
+    					margin-bottom: 5px;   				
+    				}			
+				}
+
+				&__link {
+					font-size:em(15);
+					color:#656565;	
+					padding-top: 10px;
+    				display: inline-block;		
+
+    				&--edit {
+	    				@include breakpoint(max-width $screen-sm - 1) {
+	    					display:none;
+	    				}		
+    				}
+
+
+					&:hover {
+						color:#A9A9A9;
+					}					
+				}
+
+				&__type {
+				}
+				&__total {
+					font-family: $ff-primary--semibold;
+				}
+				&__edit {
+					font-family: $ff-primary--semibold;
+					text-transform:uppercase;
+					font-size:em(13);
+					color:#7d7d7d;
+					margin-right: 5px;
+
+					&:hover {
+						color:#A9A9A9;
+					}
+				}
+			}
+		}
+
+		.item-delete-form,
+		.item-edit-form,
+		.item-update-form {
+			display:inline-block;
+		}
+
+		.head,
+		.body {
+
+			div[class^="col-"] {
+				padding-left:0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	.single-row {
+		margin-left:0;
+		margin-right:0;
+	}
+}

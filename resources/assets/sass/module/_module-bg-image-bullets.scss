@@ -1,0 +1,74 @@
+.bg-bullets {
+	@include container-fill();
+	padding: 20px 30px 25px 30px;
+	margin-right:20px;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 15px;
+	}
+
+	&__hdr {	
+		padding-bottom: 20px;
+	}
+
+	&-image {
+		@include background-cover();
+		color:$light;
+		padding:20px 30px 35px 30px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding:15px 25px 30px 25px;
+		}
+
+		&__hdr {
+			font-size:em(19);
+			line-height: 1.2;
+			text-align:center;
+			letter-spacing: 0.5px;
+
+			@include breakpoint(max-width $screen-lg - 1) {
+				padding-top: 10px;
+				text-align:left;
+			}
+		}
+
+		.list {
+			padding-left: 15px;
+			padding-top: 25px;
+			padding-bottom:30px;
+    		max-width: 300px;
+    		margin: 0 auto;	
+
+    		@include breakpoint(max-width $screen-lg - 1) {
+    			max-width: none;
+    		}
+
+    		@include breakpoint(max-width $screen-md - 1) {
+    			margin-left:0;
+    			margin-right:0;
+    		}		
+
+			.item {
+				display:list-item;
+				list-style-type: disc;
+				font-size:em(14);
+				font-family:$ff-primary--light;
+			    letter-spacing: 0.5px;
+			}
+		}
+
+		&__btn {
+		    min-width: initial;
+		    max-width: 145px;
+		    display: block;	
+		    margin: 0 auto;	
+		}
+	}
+}

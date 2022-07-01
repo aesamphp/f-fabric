@@ -1,0 +1,16 @@
+.ruler-top,
+.ruler-left {
+	position:absolute;
+	top:0;
+	left: 0;
+	background-color:#ddb329;
+}
+
+.ruler-top {
+	width:100%;
+	height:15px; 
+}
+.ruler-left {
+	height:100%;
+	width:15px;
+}

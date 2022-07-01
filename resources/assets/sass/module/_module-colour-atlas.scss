@@ -1,0 +1,148 @@
+.colour-atlas {
+	@include container-fill();
+	padding:35px 45px;
+	
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding: 15px 15px 30px 15px;
+	}
+
+}
+
+.colour-atlas-image {
+	width: 100%;
+	height:600px;
+	background-image:url('../images/colour-chart.png');
+	@include background-cover();
+
+	&--sample-books {
+		background-image: url('../images/style3.png');
+	}
+	
+	@include breakpoint(max-width $screen-md - 1) {
+    	width: 100%;
+    	height: 300px;	
+    	background-position:top;	
+	}
+}
+
+.colour-atlas-textarea {
+
+	@include breakpoint(max-width $screen-md - 1) {
+		padding-top: 20px;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-top: 10px;
+	}
+
+	&__hdr {
+		font-size:em(28);
+		padding-top: 10px;
+		padding-bottom: 20px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-bottom: 15px;
+		}
+	}
+
+	.atlas-dropdown {
+		@include s2-height(35px);
+
+		&.qty {
+			.select2 {
+				max-width: 60px;
+				text-align:center;
+			}
+                        
+                        .number {
+                            border: 1px solid #d4d4d4;
+                            height: 30px;
+                            margin-top: 10px;
+                            width: 100%;
+                        }
+                        
+                        label {
+                            display: block;
+                        }
+                        
+                        select {
+                            width: 100%;
+                        }
+		}
+
+		&__label {
+			font-size:em(15);
+			font-family:$ff-primary--semibold;
+		}
+
+		&__select + span,
+		&__select {
+			margin-top: 10px;
+		    margin-bottom: 25px;
+		    display: block;
+		}
+	}
+
+	.atlas-description {
+		font-size:em(12);
+		font-family:$ff-secondary;
+		color:#242424;
+	}
+
+	select {
+		width: auto;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			max-width: 275px !important;
+		}
+	}
+}
+
+
+.colour-atlas-total {
+	padding-top: 35px;
+
+	@include breakpoint(max-width $screen-md - 1) {
+    	text-align: right
+	}
+
+	&__total {
+	}
+	&__btn {
+		float: right;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			float:none;
+			margin-top:10px;
+		}
+	}
+}
+
+.colour-atlas-download {
+	border-top:1px solid #e0e8e9;
+	padding-top:25px;
+	margin-top: 30px;
+
+	&__para {
+		font-size:em(14);
+	}
+	&__btn {
+		transition:0.3s;
+		width: 100%;
+	    padding: 10px 5px;
+    	min-width: initial;
+    	max-width: 150px;	 
+	    float: right;
+    	text-align: center;
+    	display: block;
+
+    	&:hover {
+			color:$light;
+    	}    
+
+	    @include breakpoint(max-width $screen-sm - 1) {
+			float: right;
+    		margin-top: 20px;
+	    }	    		
+	}
+}

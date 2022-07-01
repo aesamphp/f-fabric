@@ -1,0 +1,104 @@
+.upload-design {
+	@include container-fill();
+	padding:35px;
+	height: 100%;
+	margin-left: -35px;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		margin-left: 0;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	&-image {
+		min-height:600px;
+		background-color:gainsboro;
+		border:solid 1px gainsboro;
+		overflow:hidden;
+		position: relative;
+		@include background-cover();
+		background-image:url('../images/upload-design.png');
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			min-height: 250px;
+		}
+	}
+
+	&-textarea {
+		padding-bottom:20px;
+		margin-bottom: 20px;
+		border-bottom:solid 1px #ebebeb;
+
+		.icon-loading {
+			display: inline-block;
+			margin-left: 10px;
+                        transform: translateY(-13px);
+			
+		}
+
+		.file-name {
+                        color: #A7A7A7;
+                        padding-top: 10px;
+                        display: block;
+                        font-size: em(14);
+		}
+
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				padding-bottom: 20px;
+			}
+		}
+
+
+		&__hdr {
+		}
+
+		&__ordered {
+			font-family:$ff-primary--semibold;
+			font-size:em(14);
+			color:$pickout-light;
+			padding-bottom: 15px;
+			padding-top: 5px;
+		}
+		&__para {
+			font-family:$ff-secondary;
+			font-size:em(12);
+                        padding-bottom: 20px;
+                        
+                        &.no-padding {
+                            padding: 0;
+                        }
+		}
+
+		&__label {
+			font-family:$ff-secondary;
+			font-size:em(12);
+			padding-top: 20px;
+
+			a {
+				color:$pickout-light;
+
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+		}	
+
+		&__btn {
+                        margin-top: 20px;
+			padding: 7px 30px;
+		}	
+	
+		.checkbox-text {
+			font-family:$ff-secondary;
+			font-size:em(12);
+		}
+	}
+}

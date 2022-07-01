@@ -1,0 +1,319 @@
+.featured-info {
+  @include container-fill();
+  padding: 35px 25px;
+  min-width: 940px;
+
+  @include breakpoint(max-width $screen-lg - 1) {
+    min-width: initial;
+  }
+
+  @include breakpoint(max-width $screen-sm - 1) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  &-image {
+
+    &__img {
+      background-color: #f7f7f7;
+      height: 410px;
+      position: relative;
+      overflow: hidden;
+
+      @include breakpoint(max-width $screen-sm - 1) {
+        height: 250px;
+      }
+
+      img {
+        border: 1px solid gainsboro;
+      }
+    }
+
+    &__label {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-carousel {
+    position: relative;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      padding-top: 15px;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 10px;
+    }
+
+    .sly-carousel {
+      max-width: calc(100% - 30px);
+      margin: 15px auto 0;
+
+      @include breakpoint(max-width $screen-md - 1) {
+        max-width: 95%;
+      }
+
+      @include breakpoint(max-width $screen-sm - 1) {
+        max-width: none;
+      }
+    }
+
+    .sly-content .sly-item {
+      width: 115px !important;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      @include breakpoint(max-width $screen-sm - 1) {
+        width: 85px !important;
+        height: 85px !important;
+      }
+    }
+
+    .sly-prev {
+      left: -15px;
+    }
+
+    .sly-next {
+      right: -15px;
+    }
+
+    .item-carousel {
+      &__list-item {
+        .products-grid-tile {
+          height: 115px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  &-details {
+
+    @include breakpoint(max-width $screen-md - 1) {
+      margin-top: 10px;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .mobile-inline {
+      @include breakpoint(max-width $screen-md - 1) {
+        display: inline-block;
+        width: 49%;
+      }
+
+      @include breakpoint(max-width $screen-sm - 1) {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__title {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      color: $light;
+      text-transform: uppercase;
+      font-family: em(22);
+      background-color: #CACACA;
+
+      @include breakpoint(max-width $screen-sm - 1) {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+
+    &__hdr {
+      font-size: em(18);
+      margin-top: 10px;
+    }
+
+    &__author {
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .design-options-tabs {
+      border: 1px solid #e4e4e4;
+
+      &__hdr {
+        background-color: #ebebeb;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 13px;
+        padding-bottom: 15px;
+
+        @include breakpoint(max-width $screen-sm - 1) {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+
+      .loader {
+        font-size: 30px;
+        position: fixed;
+        margin-left: 150px;
+        margin-top: -130px;
+      }
+    }
+
+    .choose-dropdown__label.hdr-input {
+      padding-top: 10px;
+    }
+
+    .favorites-section {
+      margin-top: 10px;
+
+      a {
+        transition: 0.3s;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      img {
+      }
+
+      p {
+        display: inline-block;
+        color: $dark;
+      }
+    }
+  }
+
+  .labels {
+    font-family: $ff-primary--semibold;
+
+    @include breakpoint(max-width $screen-md - 1) {
+      display: inline-block;
+      width: 49%;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      display: block;
+      width: 100%;
+    }
+
+    .label-single {
+      margin-bottom: 10px;
+
+      &__hdr {
+        font-size: em(14);
+        display: inline-block;
+      }
+    }
+  }
+
+  .social-container {
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+    .btn-social {
+      @include breakpoint(max-width $screen-sm - 1) {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .choose {
+    background-color: #E4E4E4;
+    margin-top: 15px;
+    padding: 20px;
+
+    .qty + span,
+    .qty {
+      .select2-selection__rendered {
+        text-align: center;
+      }
+    }
+
+    &-dropdown {
+      @include s2-height(35px);
+
+      &--pad {
+        margin-top: 10px;
+      }
+
+      &__select + span,
+      &__select {
+        width: 100% !important;
+
+      }
+
+      .boot-style {
+        padding-left: 15px;
+        padding-right: 0;
+      }
+    }
+
+    &-total {
+      padding-top: 15px;
+
+      @include breakpoint(max-width $screen-md - 1) {
+        text-align: right;
+      }
+
+      &__btn {
+        min-width: initial;
+        width: 100%;
+        max-width: 200px;
+        float: right;
+      }
+
+      &__total {
+        padding-top: 9px;
+
+        @include breakpoint(max-width $screen-md - 1) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .additional {
+    font-family: $ff-primary--semibold;
+    margin-top: 40px;
+
+    @include breakpoint(max-width $screen-lg - 1) {
+      margin-top: 20px;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+      display: none;
+    }
+
+    &__hdr {
+      font-size: em(14);
+    }
+
+    &__link {
+      font-size: em(14);
+
+      &:hover {
+        &:after {
+          color: #1bb5ae;
+        }
+      }
+
+      &:after {
+        content: '|';
+        padding-left: 3px;
+      }
+
+      &:last-of-type {
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+}

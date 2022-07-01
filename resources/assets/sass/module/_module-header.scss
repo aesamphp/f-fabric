@@ -1,0 +1,391 @@
+.header {
+	border-bottom: 1px dashed #C3C3C3;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		border-bottom:0;
+	}
+
+	&__logo {
+		max-width:225px;
+		width:100%;
+		margin-top:40px;
+		margin-bottom:40px;
+		transition:0.3s;
+		position: relative;
+		z-index:100;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			margin-left:auto;
+			margin-right:auto;
+			display:block;
+		    max-width: 110px;
+		    margin-top: 14px;
+		    margin-bottom: 15px;
+		}
+
+		&:hover {
+			opacity:0.7;
+		}
+	}
+
+	&-burger {
+		position: relative;
+    	z-index: 100;
+		width:25px;	
+		height:25px;	
+		margin-top: 16px;
+		background-image:url('../images/svgs/burger.svg');
+		background-position:center;
+		background-size:contain;
+		display: block;
+
+		&.active {
+			background-image:url('../images/svgs/cross.svg');
+		}
+	}
+
+	&-rightside {
+		text-align: right;
+		padding-top: 36px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-top: 0;
+			margin-left: 15px;
+    		margin-right: 15px;			
+		}
+
+		@include breakpoint(max-width $screen-xs - 1) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		form {
+			display:inline-block;
+		}
+
+		&__search {
+			margin-left: -100px;
+			width: 460px;
+			display: inline-block;
+			height: 37px;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				max-width:none;
+			}
+
+			@include breakpoint(max-width $screen-xs - 1) {
+				height:35px;
+				float: left;
+			}
+
+			button {
+				background-image:url('../images/svgs/search.svg');
+			}
+		}
+
+
+		&-basket {
+			display:inline-block;
+			width:30px;
+			margin-right: 32px;
+			position: relative;
+			cursor:pointer;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				width:25px;
+				margin-right:15px;
+				margin-left:15px;				
+			}
+
+			&__img {
+				height:100%;
+
+				@include breakpoint(max-width $screen-xs - 1) {
+					width:30px;
+				}
+			}
+
+			.notification {
+				position: absolute;
+				top:-7.5px;
+				right:-7.5px;
+
+				@include breakpoint(max-width $screen-xs - 1) {
+					top: -10px;
+				    right: -10px;
+				}
+			}
+		}
+
+		&__select + span,
+		&__select {
+			width:90px!important;	
+			padding-left:10px;	
+		    padding-top: 5px;
+		    margin-bottom: 5px;	
+		    margin-right:25px;
+		    text-align:left!important;		
+
+		    @include breakpoint(max-width $screen-lg - 1) {
+		    	width:105px!important;
+		    }
+
+		    @include breakpoint(max-width $screen-md - 1) {
+		    	padding-top: 2px;
+		    	padding-bottom: 2px;
+		    	padding-right: 12px;
+		    	margin-bottom: 0;
+		    }	
+
+		    @include breakpoint(max-width $screen-xs - 1) {
+		    	float: left;
+				padding:0;
+		    }
+		}
+
+		&__link {
+			font-family:$ff-primary--bold;
+			font-size:em(14);
+			color:$dark;
+			transition:color 0.3s;
+
+			&:hover {
+				color:lighten($dark, 50%);
+				text-decoration:none;
+			}
+		}
+
+		&-list {
+			padding-top: 25px;
+			font-size:em(14);
+			letter-spacing:1px;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				padding-bottom: 25px;
+			}
+
+			@include breakpoint(max-width $screen-xs - 1) {
+				text-align:center;
+			}
+
+			&__item {
+				padding-left:14px;
+				padding-right:14px;
+				border-right:solid 1px #7d7d7d;
+
+				@include breakpoint(max-width $screen-xs - 1) {
+					padding-left: 8px;
+					padding-right: 8px;
+				}
+
+				&:last-of-type {
+					border-right:0;
+					padding-right: 0;
+
+					@include breakpoint(max-width $screen-xs - 1) {
+						padding-right: 8px;
+					}
+				}
+
+				a {
+					color:#7d7d7d;
+
+					&:hover {
+						text-decoration:none;
+						color:$pickout;
+					}
+				}
+			}
+		}
+
+		.boot-style {
+
+			@include breakpoint(max-width $screen-md - 1) {
+				margin-top: 15px;
+			}
+
+			@include breakpoint(max-width $screen-md - 1) {
+				margin-top: 20px;
+			}
+		}
+	}				
+}
+
+.header-menu {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	margin-bottom: -2px;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		border-bottom:none;
+	}
+
+	&-list {
+		max-width: 1200px;
+    	margin: 0 auto;
+    	text-align:center;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			background-color: #A0A0A0;
+		}
+
+		&__item {
+			text-align:center;
+			font-family:$ff-primary--semibold;
+			font-size:em(16);
+			text-transform:uppercase;
+			position: relative;
+			width: 200px;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				width:180px;
+			}
+
+			@include breakpoint(max-width $screen-md - 1) {
+				position: relative;
+    			display: block;
+    			width: 100%;
+
+    			&:after { 
+    				display:none;
+    			}
+			}
+
+			&:after { 
+				content:'';
+				position: absolute;
+				right:0;
+				top:50%;
+				margin-top:-8.5px;
+				width:1px;
+				height:15px;
+				border-right: 1px solid #BFBFBF;
+			}
+
+			&:last-of-type {
+				border-right:none;
+
+				&:after { 
+					display:none;
+				}
+			}	
+
+			&.hover-init {
+
+				&:last-of-type {
+
+					@include breakpoint(max-width 1460px) {
+						.menu-sub {
+							right:0;
+						}
+					}
+				}
+			}		
+
+    		@include breakpoint(max-width $screen-md - 1) {
+    			border-right: none;
+    			border-bottom:1px solid #BFBFBF;
+    		}
+
+    		a {
+    			text-decoration:none;
+    			color:#888888;
+   				display: block;
+   				padding-top: 20px;
+   				padding-bottom: 20px;
+
+    			@include breakpoint(max-width $screen-md - 1) {
+    				padding-top: 30px;
+    				padding-bottom: 30px;
+    				color:$light;
+    				font-size: em(18);
+    				letter-spacing: 1px;
+    			}
+    		}		
+		}
+	}
+}
+	
+.currency {
+    .select2-results__option {
+    	position: relative;
+
+		&:after { 
+			content:'';
+			position: absolute;
+			@include background-cover();
+		    height: 15px;
+		    width: 25px;
+		    right: 5px;
+		    top: 8px;
+		}
+
+    	&:nth-of-type(1) {
+    		&:after { 
+    			background-image: url("../images/flag-brit.png");
+    		}
+    	}
+
+    	&:nth-of-type(2) {
+    		&:after { 
+    			background-image: url("../images/flag-euro.png");
+    		}
+    	}
+
+    	&:nth-of-type(3) {
+    		&:after { 
+    			background-image: url("../images/flag-amer.png");
+    		}
+    	}    	    	
+    }
+}
+
+
+.header,
+.mobile-menu {
+	.select2-selection__rendered {
+		position: relative;
+		
+		&:after { 
+			content:'';
+			position: absolute;
+			width:20px;
+			height:12px;
+			@include background-cover();
+    		right: 22px;
+    		top: 50%;
+    		margin-top: -6px;			
+		}
+	}
+
+	span[title^="GBP"] {
+		&:after { 
+			background-image: url("../images/flag-brit.png");
+		}
+	}
+
+	span[title^="EUR"] {
+		&:after { 
+			background-image: url("../images/flag-euro.png");
+		}
+	}	
+
+	span[title^="USD"] {
+		&:after { 
+			background-image: url("../images/flag-amer.png");
+		}
+	}
+}
+
+
+.mobile-menu {
+	.select2-selection__rendered {
+		&:after { 
+		    width: 15px;
+		    height: 10px;
+		}		
+	}	
+}
+
+.accept-cookie-policy-section p{
+	font-size: 0.9em
+}

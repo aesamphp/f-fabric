@@ -1,0 +1,252 @@
+.order-process {
+	margin-left: 50px;
+	max-width:860px;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		margin-left: 20px;
+	}
+
+	@include breakpoint(max-width $screen-md - 1) {
+		margin:0 auto;
+		display:block;
+	}
+
+	&:first-of-type {
+		margin-top:35px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-top: 0;
+		}
+	}
+
+	.single {
+		border:solid 1px #CCCCCC;
+		margin-bottom:15px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-bottom: 0;
+			border-bottom: 0;
+		}
+	}
+
+	&-head {
+		padding-top:15px;
+		padding-bottom:15px;
+		padding-left: 35px;
+		padding-right: 35px;
+		background-color:#F6F6F6;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-top: 7.5px;
+			padding-bottom: 7.5px;
+			padding-left: 20px;
+    		padding-right: 15px;			
+		}
+
+		.head-col {
+			font-size:em(14);
+			font-family: $ff-primary--semibold;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				padding-bottom: 7.5px;
+				padding-top: 7.5px;
+			}
+
+			&__hdr {
+				text-transform:uppercase;
+				letter-spacing: -0.5px;
+				padding-bottom: 5px;
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					padding-bottom: 0;
+				}
+			}
+			&__subhdr {
+				color:#585858;
+			}	
+
+			&__dropdown {
+				color:$pickout-light;
+				position: relative;
+				margin-right: 25px;
+				cursor:pointer;
+
+				&:after { 
+					content:'';
+					position: absolute;
+					border-color: #888 transparent transparent;
+					border-style: solid;
+					border-width: 5px 4px 0;
+					height: 0;
+					right: -15px;
+					margin-left: -4px;
+					margin-top: -2px;
+					top: 50%;
+					width: 0;					
+				}
+			}
+
+			&__link {
+				color:$pickout-light;
+				padding-left: 5px;
+			}
+
+			&--orders {
+				text-align: right;
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					text-align: left;
+				}
+			}
+
+			&--dispatch {
+				.head-col__subhdr {
+					width:170px;
+				}
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					display:none;
+				}
+			}
+		}
+
+		.boot-style {
+			padding-left: 7.5px;
+			padding-right: 7.5px;
+		}
+	}
+
+	&-body {
+		padding-left: 25px;
+		padding-bottom: 35px;
+		padding-right: 45px;
+
+		@include breakpoint(max-width $screen-lg - 1) {
+			padding-right: 25px;
+			padding-bottom: 25px;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-bottom: 20px;
+		}
+
+		&__hdr {
+			font-size:em(16);
+			padding-top: 25px;
+			padding-bottom: 5px;
+			position: relative;
+			padding-left: 25px;
+
+			&.in-progress {
+				&:after { 
+				    background-image: url(../images/svgs/pending.svg);
+				}
+			}
+
+			&.dispatched {
+				&:after { 
+				    background-image: url(../images/svgs/approved.svg);
+				}
+			}			
+
+			&:after { 
+				content:'';
+				position: absolute;
+				left:0;
+				width:20px;
+				height:20px;
+				@include background-contain();
+			}
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				padding-bottom: 10px;
+			}
+		}
+                
+                &__shipping-method {
+                    padding-bottom: 20px;
+                }
+
+		.boot-style {
+			padding-left:0;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				padding-left: 15px;
+			}
+		}
+	}
+
+	&-details {
+		&__img {
+			height:105px;
+			width:105px;
+			background-color:$dark;
+			display:inline-block;
+			background-size: 75%;
+    		background-position: center;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				height: 75px;
+    			width: 75px;
+			}
+		}
+		.description {
+			display:inline-block;
+			vertical-align: top;
+			margin-left:20px;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				margin-left: 8px;
+			}
+
+			.list {
+				.item {
+					font-size: em(13);
+					display:block;
+					color:#656565;
+					font-family: $ff-primary--semibold;
+
+					&:first-of-type {
+						font-family: $ff-primary--bold;
+					}
+				}
+			}
+
+			&__link {
+				max-width:130px;
+				min-width: initial;
+				padding: 5px 10px;	
+				margin-top: 10px;	
+			}	
+		}	
+	}
+
+	&-cta {
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-top: 25px;
+		}
+
+		&__btn {
+			width:100%;
+			min-width: initial;
+			max-width: 480px!important;
+			display: block;
+    		margin: 0 auto;
+			margin-bottom: 10px;
+		}
+	}
+
+	.single-desc {
+		padding-bottom:12px;
+		padding-top: 12px;
+	}
+}
+
+
+.tracking-number {
+    background-color: #ecedef;
+    border: 1px solid #cccccc;
+    padding: 8px 12px;
+}

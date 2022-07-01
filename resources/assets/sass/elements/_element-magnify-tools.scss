@@ -1,0 +1,96 @@
+.zoom-in,
+.zoom-out,
+.reset {
+	height:40px; 
+	width:40px; 
+	background-color:rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top:0; 
+	z-index: 1;    
+	cursor: pointer;
+	@include background-contain();
+	background-size:80%;
+	transition:opacity 0.3s;
+	opacity:0.5;
+
+	&:hover {
+		opacity:1;
+	}
+}
+
+.zoom-in {
+	right:81px;
+	background-image:url('../images/svgs/zoom-in.svg');
+	margin-right:1px;
+}
+
+.zoom-out {
+	right:41px;
+	background-image:url('../images/svgs/zoom-out.svg');
+}
+
+.reset {
+	right:0;
+	background-image:url('../images/svgs/reset.svg');
+	background-size:70%;
+}
+
+.magnify-hover {
+	position: relative;
+	z-index: 10;	
+    background-color: $dark;	
+
+    @include breakpoint(max-width $screen-sm - 1) {
+    	background-color: #E2E0E0;	
+    }
+
+	&:after { 
+		content:'';
+		transition: 0.3s;
+		position: absolute;
+		height:40px;
+		width:40px;
+		background-image:url("../images/magnify.png");
+		@include background-contain();
+		top:50%;
+		left:50%;
+		margin-left: -20px;
+		margin-top: -20px;
+		opacity:0;
+		pointer-events:none;
+	}    
+
+	img {
+		transition: 0.3s;
+	}
+
+	&:hover {
+
+		&:after { 
+			opacity:1;
+		}
+
+		img {
+			opacity:0.5;	
+		}
+	}	
+}
+
+
+.glass {
+  width: 175px;
+  height: 175px;
+  position: absolute;
+  border-radius: 50%;
+  cursor: crosshair;
+  
+  /* Multiple box shadows to achieve the glass effect */
+  box-shadow:
+    0 0 0 7px rgba(255, 255, 255, 0.85),
+    0 0 7px 7px rgba(0, 0, 0, 0.25), 
+    inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+  
+  /* hide the glass by default */
+  display: none;
+}
+

@@ -1,0 +1,86 @@
+.btn-social {
+	width:35px;
+	height:35px;
+	display:inline-block;
+	background-position:center;
+	background-repeat:no-repeat;
+	margin-right: 12px;
+	background-size: 15px;
+	transition:0.3s;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&.minor {
+		height:30px;
+		width:30px;
+	}
+
+	&:hover {
+		transform:scale(1.1,1.1);
+	}
+
+	&.fb {
+		background-color:$facebook;
+		background-image:url('../images/svgs/fb.svg');
+
+		&:hover {
+			background-color:lighten($facebook, 10%);
+		}
+	}
+
+	&.tw {
+		background-color:$twitter;
+		background-image:url('../images/svgs/tw.svg');
+
+		&:hover {
+			background-color:lighten($twitter, 10%);
+		}				
+	}
+
+	&.yt {
+		background-color:$youtube;
+		background-image:url('../images/svgs/yt.svg');
+
+		&:hover {
+			background-color:lighten($youtube, 10%);
+		}				
+	}
+
+	&.ig {
+		background-color:$instagram;
+		background-image:url('../images/svgs/ig.svg');
+
+		&:hover {
+			background-color:lighten($instagram, 10%);
+		}				
+	}
+
+	&.gp {
+		background-color:$google;
+		background-image:url('../images/svgs/gp.svg');
+
+		&:hover {
+			background-color:lighten($google, 10%);
+		}				
+	}
+
+	&.pn {
+		background-color:$pinterest;
+		background-image:url('../images/svgs/pn.svg');
+
+		&:hover {
+			background-color:lighten($pinterest, 10%);
+		}			
+	}
+
+	&.in {
+		background-color:$linkedin;
+		background-image:url('../images/svgs/in.svg');
+
+		&:hover {
+			background-color:lighten($linkedin, 10%);
+		}			
+	}	
+}

@@ -1,0 +1,89 @@
+.upload-popup {
+    position: fixed;
+    width: 500px;
+    background-color: $light;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    z-index:101;
+    padding: 30px 20px 45px 20px;
+
+    @include breakpoint(max-width $screen-sm - 1) {
+        margin-left: 0;
+        width: 100%;
+        left: 0;
+        padding-bottom: 35px;
+        top:50%;
+        margin-top: -193px;
+
+    }
+
+    &__cancel {
+        color:#818181;
+        float:right;
+        cursor:pointer;
+
+        &--abs {
+            position: absolute;
+            right:0;
+        }
+
+        &.paint-warn {
+            color: $notif-red;
+        }
+    }
+
+    &__send {
+        margin: 0 auto;
+        display: block;
+        width: 200px;
+    }
+
+    &-padded {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &-ctas {
+        margin-top: 30px;
+        margin-bottom: 35px;
+
+        @include breakpoint(max-width $screen-sm - 1) {
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        &__btn {
+            min-width: 145px;
+            padding: 5.5px 16px;
+        }
+    }
+
+    &-fields {
+        padding-bottom:45px;
+
+        @include breakpoint(max-width $screen-sm - 1) {
+            padding-bottom: 25px;
+        }
+
+        &__last {
+            margin-top:15px;
+        }
+    }
+
+    .upload {
+        width:135px;
+
+        @include breakpoint(max-width $screen-sm - 1) {
+        margin-bottom: 10px;
+        }
+
+        &__overlay {
+            min-width: initial;
+        }
+    }
+    .buttons { margin-top: 10px;
+        .btn-tertiary--gray:first-child { margin-left: 20px; }
+    }
+}

@@ -1,0 +1,53 @@
+.delivery-options {
+	&__hdr {
+		font-size: em(19);
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left: 15px;
+		}
+	}
+
+	&-inner {
+		background-color:#f6f6f6;
+		padding:20px 30px;
+		font-family: $ff-secondary;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left: 15px;
+    		padding-right: 25px;
+		}
+
+		&__para {
+			font-family: $ff-primary--semibold;
+			font-size: em(17);
+			padding-bottom: 15px;
+		}
+		&__amount {
+			font-family: $ff-secondary;
+			font-weight: $fw-semibold;
+			font-size: em(14);
+			margin-top: -1px;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				text-align: right;
+			}
+		}
+
+		.price {
+		}
+
+		.checkbox-container {
+			.checkbox-text {
+				padding-bottom: 10px;
+				font-size: em(13);
+			}
+		}
+                
+                .icon-loading {
+                    display: block;
+                    width: 50px;
+                }
+	}
+}

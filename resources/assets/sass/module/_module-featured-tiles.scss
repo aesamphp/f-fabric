@@ -1,0 +1,227 @@
+.featured-tiles {
+	@include container-fill();
+	padding: 40px 35px 55px 35px;
+	text-align:center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+
+	&.major {
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-left: 15px;
+	    	padding-right: 15px;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-left:0;
+		padding-right: 0;
+		padding-bottom: 0;
+		padding-top: 15px;
+	}
+
+	&__hdr {
+		font-size:em(53);
+		letter-spacing:3px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left:15px;
+			padding-right:15px;
+			line-height: 1;
+    		letter-spacing: 1px;						
+		}		
+	}
+
+	&__subhdr {
+		font-size:em(25);
+		margin-bottom:40px;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+    		margin-bottom: 15px;
+		}
+	}
+
+	&__para {
+		color:#888888;
+		letter-spacing:1px;
+		font-size:em(17);
+		padding-top: 20px;
+		padding-bottom: 35px;
+    	max-width: 720px;
+    	margin: 0 auto;	
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-left:15px;
+			padding-right:15px;
+			padding-bottom: 25px;
+		}    		
+	}
+
+	&__btn {
+		margin-top:50px;
+		padding-top: 9px;
+		padding-bottom: 9px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-bottom: 30px;
+			margin-top: 30px;
+			max-width: none!important;
+    		width: 210px;
+		}
+	}
+}
+
+.container-single-tiles {
+	
+	.single-tile {
+		text-align:center;
+		color:$light;
+		height:250px;
+		padding-left: 5px;
+		padding-right: 5px;
+		@include background-cover();
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			min-height: 300px;
+		}
+
+		&--register {
+			background-image:url('../images/smartphone-laptop.png');
+		}
+
+		&--upload {
+			background-image:url('../images/lemon-drink-ipad.png');
+		}
+
+		&--online {
+			background-image:url('../images/guy-work.png');
+		}
+
+		&--money {
+			background-image:url('../images/sewing-woman.png');	
+		}
+
+		&__hdr {
+			font-size:em(28);
+			text-transform:uppercase;
+			text-shadow:1px 1px 0px #616161;
+		}
+
+		&__subhdr {
+			font-size:em(18);
+			text-transform:uppercase;
+		}
+
+		&__para {
+			padding-top: 15px;
+			padding-bottom: 25px;
+			max-width: 235px;
+			margin:0 auto;
+			font-size:em(13);
+			line-height: 1.2;
+	    	letter-spacing: 1px;	   
+	    	height: 92px;
+	    	text-shadow:1px 1px 0px #616161;
+
+	    	@include breakpoint(max-width $screen-sm - 1) {
+	    		font-size:em(16);
+	    		max-width: 280px;
+	    	} 		
+		}
+
+		&__btn {
+			min-width: initial;
+		    max-width: 170px;
+		    display: block;
+		    margin: 0 auto;
+		}
+
+		&__number {
+			margin:0 auto;
+			display:block;
+		}
+
+		&.ordered {
+			.single-tile  {				
+				&__subhdr {
+					padding-top: 15px;
+				}
+
+				&__para {
+					padding-bottom:0;
+				}
+			}
+		}
+	}
+
+	&--major {
+		.single-tile {
+			max-width: 335px;
+			height:295px;
+			margin:0 auto;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				max-width:none;
+			}
+
+			&__number {
+				height:72px;
+				width:72px;
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					height: 60px;
+    				width: 60px;
+				}
+			}
+
+			&__subhdr {
+				font-size:em(22);
+			}
+
+			&__para {
+				font-size:em(14);
+				max-width: 295px;
+			}
+		}
+	}		
+
+	.boot-style {
+		padding-left:2.5px;
+		padding-right: 2.5px;
+
+		&:first-of-type {
+			padding-left:0;
+		}
+		&:last-of-type {
+			padding-right: 0;
+		}
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding:2.5px;
+
+			&:first-of-type {
+				padding-left:2.5px;
+			}
+			&:last-of-type {
+				padding-right:2.5px;
+			}
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding:0!important;
+		}
+	}
+
+
+	.sly-bullets {
+		bottom: 25px;
+	}
+}

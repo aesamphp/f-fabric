@@ -1,0 +1,136 @@
+.grand-total {
+    width: 250px;
+    float: right;
+    padding-top: 60px;
+    margin-right: 40px;
+
+
+    @include breakpoint(max-width $screen-md - 1) {
+    	margin-right: 0;
+    }
+
+    @include breakpoint(max-width $screen-sm - 1) {
+    	padding-top: 20px;
+    	padding-right: 25px;
+    }
+
+    @include breakpoint(max-width $screen-xs - 1) {
+    	padding-top: 35px;
+    }
+
+    &--large-padding {
+    	padding-top: 150px;
+    	margin-right: 0;
+
+    	@include breakpoint(max-width $screen-md - 1) {
+    		padding-top: 225px;
+    	}
+
+    	@include breakpoint(max-width $screen-sm - 1) {
+    		padding-top: 35px;
+    		padding-right: 15px;
+    	}
+    }
+
+    &--no-padding {
+    	padding-top: 0;
+
+    	@include breakpoint(max-width $screen-sm - 1) {
+    		padding-top: 40px;
+    	}
+    }
+
+    &--order-review {
+    	padding-top: 0px;	
+
+    	@include breakpoint(max-width $screen-sm - 1) {
+    		padding-right: 0;
+    		padding-top: 30px;	
+    	}
+    }
+
+	&__title,
+	&__expense {
+		@extend .hdr-section;
+		font-size:em(16);
+
+	}
+
+	&__expense {
+		text-align:right;
+	}
+
+	&__grand-expense {
+		@extend .hdr-section;
+		font-size: em(20);
+		color:$pickout;
+		text-align:right;
+		padding-top: 25px;
+                
+                &.vat {
+                    font-size: 12px !important;
+                    padding: 0 0 30px;
+                }
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-top: 10px;
+		}
+	}
+
+	&__checkout {
+		margin-top:30px;
+		float:right;
+		padding-left: 30px;
+		padding-right: 30px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-left: 15px;
+	    	padding-right: 15px;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			
+		}
+	}
+
+	&-extra {
+		position: relative;
+		margin-right: 40px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			margin-right: 0;
+		}
+
+		&__link {
+			position: absolute;
+			margin-top: 0;
+			bottom:0;
+			left:0;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+			    position: relative;
+			    margin-top: 22px;
+			    display: block;
+			}
+		}
+
+		.grand-total {
+                        &__checkout {
+				margin-top: 40px;
+			}
+		}
+
+		.checkbox-container {
+			position: absolute;
+			right:0;
+		}
+	}
+
+	.boot-style-1 {
+		padding-right:0;
+	}
+
+	.boot-style-2 {
+		padding-left: 0;
+	}
+}

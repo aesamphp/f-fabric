@@ -1,0 +1,222 @@
+.footer-main {
+	position: relative;
+	background-color:$pickout;
+	color:$light;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-image:url('../images/tile-pickout.png');
+	border-top: 1px dashed $light;	
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-top: 40px;
+    	padding-bottom: 50px;
+	}
+
+	&:before,
+	&:after { 
+		content: '';
+	    position: absolute;
+	    height:1px;
+	    width:100%;
+	    background-position: left;
+	    //background-image:url("../images/dotted.png");
+	}
+
+	&:before { 
+	    top: 10px;		
+	}
+
+	&:after { 
+	    bottom: 10px;				
+	}
+
+	&__hdr {
+		font-size:em(17);
+		font-family:$ff-primary--semibold;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			font-size: em(18);
+    		text-transform: uppercase;
+    		letter-spacing: 1px;
+    		text-align: center;		
+    		cursor:pointer;
+    		outline:0;	
+		}
+
+		&.minor {
+			font-size:em(16);
+		}
+	}
+
+	&__input {
+		height:40px;
+		margin-top: 15px;
+		margin-bottom: 35px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			margin-bottom: 0;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			height:35px;
+		}
+
+		input, 
+		button {
+			border:none;
+		}
+
+		input {
+			width:75%;
+		}
+
+		button {
+			background-color:#7FA1AB;
+			width:25%;
+			transition:0.3s;
+			text-transform:uppercase;
+			font-size: em(14);
+			font-family: $ff-primary--semibold;
+
+			&:hover {
+				background-color:darken(#7FA1AB, 5%);
+			}
+		}
+	}
+
+	&-list {
+		padding-top: 20px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-bottom: 40px;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			text-align: center;
+			padding-bottom: 20px;
+		}
+
+		&__item {
+			font-size:em(14);
+			display:block;
+			line-height: 2;
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				font-size:em(16);
+			}
+
+			a {
+				color:$light;
+
+				@include breakpoint(max-width $screen-sm - 1) {
+					color:rgba(255, 255, 255, 0.77);
+				}
+
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+		}
+	}
+
+	&-social {
+		margin-top: 15px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			text-align:center;
+		}
+
+		&__btn {
+			@include breakpoint(max-width $screen-lg - 1) {
+				margin-right: 2px;
+			}
+
+			@include breakpoint(max-width $screen-sm) {
+				width: 32px;
+    			height: 32px;
+			}
+		}
+	}
+
+	.boot-style {
+		@include breakpoint(max-width $screen-md - 1) {
+			float:right;		
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			float:left;
+			margin-top: 25px;
+		}
+	}
+
+	// THIRD PARTY OVERWRITES
+	.accordion {
+		margin-bottom: 50px;
+	}
+
+	.ui-accordion-header {
+		padding-top: 15px;
+    	padding-bottom: 15px;
+    	border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+	}
+
+	.ui-accordion-content-active {
+		.footer-main-list {
+			border-bottom:1px solid rgba(255, 255, 255, 0.37);
+		}
+	}
+
+	.ui-accordion-header-icon {
+		height: 20px;
+    	width: 20px;
+    	display: inline-block;
+    	position: absolute;
+    	right: 15px;
+    	background-image:url('../images/svgs/arrow.svg');
+    	background-position:center;
+    	background-size:contain;
+    	transform: rotate(-90deg);
+    	transition:0.3s;
+
+	}
+
+	.accordion-header-icon-active {
+		transform: rotate(90deg);
+	}
+}
+
+.footer-copyright {
+	font-family:$ff-primary--semibold;
+	background-color:$light;
+	color:#8c8c8c;
+	font-size:em(13);
+    padding-top: 16px;
+    padding-bottom: 16px;	
+
+	a {
+		color:#8c8c8c;
+
+		&:hover {
+			text-decoration:underline;
+		}
+	}
+
+	p {
+		display:inline-block;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			display:block;
+			text-align:center;
+		}
+	}
+
+	&__copy {
+		float:right;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			float:none;
+			padding-top: 5px;
+		}
+
+	}
+}

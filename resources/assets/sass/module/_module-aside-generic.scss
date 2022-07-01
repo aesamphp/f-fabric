@@ -1,0 +1,36 @@
+aside {
+	.open-content {
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-top:15px;
+		}
+	}
+}
+
+.aside-boot {
+	.hdr-aside {
+		position: relative;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			&:after { 
+			    content: '';
+				transition:0.3s;
+			    right: 15px;
+			    position: absolute;
+			    height: 15px;
+			    width: 15px;
+			    top: 50%;
+			    margin-top: -7.5px;
+			    background-image: url(../images/svgs/arrow-pickout.svg);
+			    background-position: center;
+			    background-size: contain;
+			    transform: rotate(-90deg);
+			}
+
+			&.active {
+				&:after { 
+					transform: rotate(90deg);
+				}
+			}
+		}
+	}
+}

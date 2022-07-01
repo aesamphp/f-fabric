@@ -1,0 +1,151 @@
+.featured-banner {
+	@include background-cover(bottom);
+	text-align: center;
+	color:$light;
+	padding-top: 45px;
+	padding-bottom: 55px;
+	margin-bottom:15px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		margin-bottom: 0;
+    	padding-top: 20px;
+    	padding-bottom: 30px;		
+	}
+
+	&--center {
+		background-position:center;
+	}
+
+	// BG IMAGES
+	&--create-design {
+		background-image:url('../images/slideshow-image-1.png');
+	}
+
+	&--custom-printing {
+		background-image:url('../images/custom-printing.png');
+	}
+
+	&--shop {
+		background-image:url('../images/sowing2.png');
+	}
+
+	&--shop-category {
+		background-image:url('../images/sewing.png');
+	}
+
+	&--designs {
+		background-image:url('../images/sowing.png');	
+
+		@include breakpoint(max-width $screen-sm - 1) {
+	    	background: none;
+	    	background-color: $light;
+	    	color: $dark;
+	    	font-size: em(11);
+	    	padding-bottom: 5px;		
+		}
+	}
+
+	&--basket {
+		background-image:url('../images/thread-needle.png');
+	}
+
+	&--article {
+		background-image:url('../images/sewing-machine.png');
+	}
+
+	&--details {
+		background-image:url('../images/overhead.png');
+	}
+
+	&--contact {
+		background-image:url('../images/measuring.png');
+	}
+
+	&--favorites {
+		background-image:url('../images/pillows.png');
+	}
+
+	&--drawing {
+		background-image:url('../images/drawing.png');
+	}
+
+	&--questions {
+		background-image:url('../images/shirt.png');
+	}
+
+	&--delivery-returns {
+		background-image:url('../images/woman-with-box.png');
+	}
+
+	&--privacy {
+		background-image:url('../images/pillow-sofa.png');
+	}
+
+	&--terms {
+		background-image:url('../images/guy-in-park.png');
+	}
+
+	&__hdr {
+		font-size:em(53);
+		letter-spacing:2px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			line-height: 1;
+		}
+
+		&.minor {
+			font-size:em(28);
+			text-transform:uppercase;
+			font-family: $ff-primary--semibold;
+			letter-spacing: 1px;
+		}
+	}
+	&__para {
+		font-size:em(18);
+		letter-spacing:1px;
+		padding-top: 15px;
+		font-family:$ff-primary;
+	}
+
+	&.no-title {
+		padding-bottom: 65px;
+		padding-top: 65px;
+		background-position-y:center;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			padding-bottom: 45px;
+    		padding-top: 45px;
+		}
+	}
+}
+
+
+.border-featured-banner {
+	background-color:$light;
+	padding:20px;
+	margin-bottom: 20px;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		padding: 0;
+		padding-left: 15px;
+    	padding-right: 15px;    	
+    	margin-bottom: 0;
+	}
+
+	.featured-banner {
+		margin-bottom: 0;
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			background-image:none!important;
+			color:$dark;
+    		margin-bottom: 0;
+    		padding-top: 30px;
+    		padding-bottom: 30px;	
+    		border-bottom:solid 1px #eaeaea;		
+		}
+	}
+}

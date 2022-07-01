@@ -1,0 +1,167 @@
+html,
+body {
+  	height:100%;
+  	font-family: $ff-primary;
+    font-size:16px;
+    color:black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+
+  	@include breakpoint(max-width $screen-xs) {
+   		font-size:14px;
+  	}
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
+}
+
+main {
+   overflow: hidden;
+   width: 100%;
+
+   @include breakpoint(max-width $screen-lg - 1) {
+      padding-left: 15px;
+      padding-right: 15px;
+   }
+
+   @include breakpoint(max-width $screen-md - 1) {
+      padding-left: 0;
+      padding-right: 0;
+   }
+}
+
+header {
+    z-index: 100;
+    position: relative;
+}
+
+h1,h2,h3,h4 {
+  font-weight:100;
+  margin:0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+  color:$pickout;
+  &:hover {
+    text-decoration:none;
+    color:lighten($pickout, 15%);
+  }
+}
+
+ul {
+  margin:0;
+  padding:0;
+
+  li {
+    list-style-type:none;
+    display:inline-block;
+  }
+}
+
+input,
+button {
+	border: 0;
+}
+
+input {
+	padding-left:15px;
+  transition:background-color 0.3s;
+  -webkit-appearance:none!important;
+  -moz-appearance:none!important;
+  border-radius: 0!important;
+
+  @include breakpoint(max-width $screen-sm - 1) {
+    padding-left: 5px;
+  }
+}
+
+select {
+  padding-left: 5px!important;
+  border-radius:0!important;
+  border:1px solid #d4d4d4!important;
+  position: relative;
+  background-image: url("../images/dd-arrow.png");
+  background-size:14px;
+  background-repeat:no-repeat;
+  background-position:center right;
+  min-height:28px!important;
+  background-color:$light!important;
+  padding-right: 20px;
+}
+
+textarea {
+  border-radius:0!important;
+}
+
+// For IOS propriatory styling
+select,
+textarea,
+input[type="text"],
+input[type="email"] {
+  font-family:$ff-secondary;
+  -webkit-appearance:none!important;
+  -moz-appearance:none!important;
+
+  &:focus {
+    outline:1px solid $pickout;
+  }  
+}
+
+input[type="search"] {
+    box-sizing: border-box!important;
+}
+
+textarea {
+  border:1px solid #cccccc;
+  resize: none;
+  font-family:$ff-tertiary;
+  color:#5a5a5a;  
+  padding: 15px 20px;
+  font-size:em(12);
+  letter-spacing:1px;
+
+  &:focus {
+    outline:1px solid $pickout;
+  }
+
+  @include breakpoint(max-width $screen-sm - 1) {
+    padding-left: 5px;
+  }  
+}
+
+address {
+  font-style: normal;
+
+  li {
+    display:block;
+  }
+}
+
+select {
+  width:200px;
+  font-size:em(12);
+  font-family:$ff-primary--semibold;
+  height:30px;
+}
+
+button {
+  background-color:transparent;
+
+  &:focus {
+    outline:0;
+  }
+}
+
+::selection {
+  background: #BDE4E3; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #BDE4E3; /* Gecko Browsers */
+}

@@ -1,0 +1,54 @@
+.order-details {
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-bottom: 30px;
+		text-align:center;
+	}
+
+	&-edit {
+		margin-top:20px;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-top:0px;
+			margin-bottom: 50px;
+		}
+	}
+
+	&__hdr {
+		font-family: $ff-primary--semibold;
+		font-size:em(18);
+		padding-bottom: 15px;
+	}
+
+	&__btn {
+		max-width:220px;
+		color:$dark;
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-top: 20px;
+			margin-left:auto;
+			margin-right: auto;
+			display:block;
+		}
+	}
+
+	.list {
+
+		.item {
+			font-size: em(18);
+			color:#404040;
+			font-family: $ff-primary;
+			display: block;
+		}
+	}
+
+	&-row {
+		@include breakpoint(max-width $screen-md - 1) {
+			margin-bottom: 30px;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+			margin-bottom: 0;
+		}
+	}
+}

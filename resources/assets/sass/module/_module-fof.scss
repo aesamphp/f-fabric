@@ -1,0 +1,37 @@
+.four-oh-four {
+	color:#333333;
+	@include container-fill();
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 100px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+
+	&__hdr {
+		font-size: em(53);
+		padding-bottom: 15px;
+		letter-spacing:1px;
+	}
+
+	&__para {
+		font-family: $ff-secondary;
+		font-size: em(18);
+		max-width: 635px;
+    	margin: 0 auto;		
+	}
+
+	&__btn {
+		margin-top: 40px;
+		padding-top: 12px!important;
+    	padding-bottom: 12px!important;
+	}
+}

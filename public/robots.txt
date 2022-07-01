@@ -1,0 +1,18 @@
+User-agent: *
+
+# Directories and default URLs
+
+Disallow: /adm1n/
+Disallow: /basket/
+Disallow: /checkout/
+Disallow: /orders/
+Disallow: /user/
+Disallow: /design/
+
+Allow: /design/create
+Allow: /design/upload
+
+# Protect images from Google
+
+User-agent: Googlebot-Image
+Disallow: /

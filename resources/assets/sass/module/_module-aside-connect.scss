@@ -1,0 +1,196 @@
+.aside-connect {
+	padding: 30px 25px 44px 25px;
+	@include container-fill();
+	max-width:355px;
+	float: right;
+
+	@include breakpoint(max-width $screen-lg - 1) {
+		max-width:none;
+	}
+
+	@include breakpoint(max-width $screen-md - 1) {
+		margin-top: 20px;
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		margin-top: 15px;
+	}
+
+	&-intro {
+		text-align:center;
+		padding-bottom: 30px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			text-align:left;
+		}
+
+		&__hdr {
+			padding-bottom: 12px;
+			border-bottom:1px solid #f0f0f0;
+		}
+
+		&__featured-para {
+			font-size:em(13);
+			padding-top: 12px;
+			padding-bottom: 12px;
+			color:$pickout;
+		}
+
+		&__para {
+			font-size:em(13);
+			padding-bottom: 20px;
+			color:#7a7a7a;
+		}
+	}
+
+	&-instagram {
+		text-align:center;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			text-align:left;
+		}
+
+
+		&__hdr {
+			&:before { 
+				background-color:$instagram;
+				@include background-size();
+				background-image: url("../images/svgs/ig.svg");
+			}			
+		}
+
+		&__para {
+			font-size:em(14);
+			color:#7a7a7a;
+			padding-top: 5px;
+			padding-bottom: 15px;
+			max-width:225px;
+			margin:0 auto;
+			letter-spacing:0.5px;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				max-width:none;
+			}
+		}
+
+		.instagram-picture {
+			padding:23px;
+			border:1px #cccccc solid;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				display:none;
+			}
+
+			&__img {
+				height:240px;
+				width:100%;
+				@include background-cover();
+
+				@include breakpoint(max-width $screen-md - 1) {
+					background-position:top;
+					height:300px;
+				}
+				
+			}
+
+			&__para {
+				font-size:em(14);
+				padding-top: 20px;
+				max-width:200px;
+				margin:0 auto;
+
+				span {
+					color:$pickout;
+				}
+			}
+		}
+	}
+
+	&-twitter {
+		padding-top:40px;
+		text-align:center;
+
+		@include breakpoint(max-width $screen-lg - 1) {
+			height:auto;
+		}
+
+		@include breakpoint(max-width $screen-md - 1) {
+			text-align: left;
+			padding-top: 20px;
+		}
+
+		&__hdr {
+
+			&:before { 
+				@include background-contain();
+				background-image: url('../images/svgs/tw-color.svg');
+			}
+		}
+
+		&__para {
+			text-align:center;
+			font-size:em(14);
+			padding-top: 15px;
+			padding-bottom: 15px;	
+			color:#7a7a7a;	
+
+			@include breakpoint(max-width $screen-md - 1) {
+				text-align:left;
+			}
+		}
+
+		.single-tweet {
+			position: relative;
+			border-bottom:1px solid #f0f0f0;
+			border-top:1px solid #f0f0f0;
+			padding-top: 8px;
+			padding-bottom: 15px;
+			padding-left: 75px;
+			text-align:left;
+
+
+			&__img {
+				position: absolute;
+				left:0;
+				top:10px;
+				width:55px;
+				height:55px;
+				@include background-cover();
+			}
+
+			&__para {
+				color:#464646;
+				padding-bottom: 10px;
+				font-size:em(13);
+				letter-spacing:0.5px;				
+
+				span {
+					color:$pickout;
+				}
+			}
+
+			&__time {
+				color:#464646;
+				font-family:$ff-primary--semibold;
+				font-size:em(13);
+				letter-spacing:0.5px;				
+			}
+		}
+	}
+
+	.social-container {
+		.btn-social {
+			margin:0 5px;
+
+			@include breakpoint(max-width $screen-lg - 1) {
+				margin:0 1px;
+			}
+
+			@include breakpoint(max-width $screen-md - 1) {
+				&:first-of-type {
+					margin-left: 0;
+				}
+			}
+		}
+	}	
+}

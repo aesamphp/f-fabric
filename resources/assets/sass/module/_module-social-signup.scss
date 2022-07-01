@@ -1,0 +1,92 @@
+.social-signup {
+	text-align:center;
+	color:$light;
+	text-transform:uppercase;
+	background-image:url('../images/guy-on-bike.png');
+	background-size: cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	height:100%;
+
+
+	@include breakpoint(max-width $screen-md - 1) {
+		color:$dark;
+		background-color:$light;
+		background-image:none;
+		height:auto!important;
+		text-align:left;
+	    padding-left: 65px;
+	    padding-right: 65px;		
+	}
+
+	@include breakpoint(max-width $screen-sm - 1) {
+		padding-left:20px;
+		padding-right:20px;
+	}
+
+	&__hdr {
+		font-size:em(38);
+		padding-bottom: 30px;
+		position: relative;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			display:none;
+		}
+
+		&:after { 
+			content:'';
+			border-bottom:1px solid $light;
+		    width: 20px;
+		    height: 1px;
+		    position: absolute;
+		    left: 50%;
+		    bottom: 20px;
+		    margin-left: -8px;			
+		}
+	}
+
+	&__para {
+		font-family:$ff-primary--semibold;
+		font-size:em(23);
+		max-width:270px;
+		margin:0 auto;
+		padding-bottom: 65px;
+
+		@include breakpoint(max-width $screen-md - 1) {
+		    padding-bottom: 35px;
+		    max-width: none;
+		    padding-top: 50px;
+		}
+
+		@include breakpoint(max-width $screen-sm - 1) {
+		    padding-top: 25px;
+		    padding-bottom: 10px;
+		    font-size:em(20);
+		}
+	}
+
+	&__btn {
+		transition:0.3s;
+
+		@include breakpoint(max-width $screen-md - 1) {
+
+			img {
+				max-width: 200px;
+				width: 100%;	
+			}
+		}
+
+		&:hover {
+			opacity:0.8;	
+		}
+	}
+}
+
+@include breakpoint(min-width $screen-md - 1) {
+	.container-social-signup {
+		position: absolute;
+		top:0;
+		right:0;
+		height:100%;
+	}
+}

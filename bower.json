@@ -1,0 +1,22 @@
+{
+  "name": "fashion-formula",
+  "version": "0.0.0",
+  "authors": [
+    "DanE3-255 <danemcreatives@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.6"
+  }
+}

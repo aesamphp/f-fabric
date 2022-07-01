@@ -1,0 +1,109 @@
+.aside-colours {
+	padding:15px;
+	max-width: 230px;
+	font-family:$ff-primary--semibold;
+
+	@include breakpoint(max-width $screen-md - 1) {
+		max-width:none;
+	}
+
+	&__hdr {
+		display: inline-block;
+
+		@include breakpoint(max-width $screen-md - 1) {
+			padding-bottom:0;
+			display:block;
+			color:$dark;
+		}
+	}
+
+	&__para {
+		font-size:em(13);
+	    display: inline-block;
+	    float: right;
+	    margin-top: 7px;	
+	    color:$dark;	
+
+	    &:hover {
+	    	color:$dark;
+	    	text-decoration:underline;
+	    }
+	}
+
+	&-atlas {
+		cursor:pointer;
+		
+		@include breakpoint(max-width $screen-md - 1) {
+			margin-top: 15px;
+		}
+
+		&__stripe {
+			@include background-contain();
+			height:33px;
+			margin-bottom:2px;
+			transition:transform 0.3s;
+
+			@include breakpoint(max-width $screen-md - 1) {
+				background-size:contain;
+				width: 49%;
+    			display: inline-block;
+    			vertical-align: top;
+			}
+
+			@include breakpoint(max-width $screen-sm - 1) {
+				border-right: solid white 1px;
+			}
+
+			&:hover {
+				opacity:0.5;
+			}
+
+			&.selected {
+    			transform: translateX(5px);
+
+    			@include breakpoint(max-width $screen-md - 1) {
+    				transform: translateX(0px);
+    			}		
+
+				&:hover {
+					opacity:1!important;
+				}				
+			}
+
+			p {
+				text-align: center;
+    			color: $light;
+    			text-shadow: 1px 1px $dark;
+    			padding-top: 5px;
+			}
+
+			&.yellow {
+				background-image:url('../images/atlas-yellow.png');
+			}
+			&.red {
+				background-image:url('../images/atlas-red.png');
+			}
+			&.purple {
+				background-image:url('../images/atlas-purple.png');
+			}
+			&.navy {
+				background-image:url('../images/atlas-navy.png');
+			}	
+			&.blue {
+				background-image:url('../images/atlas-blue.png');
+			}
+			&.brown {
+				background-image:url('../images/atlas-brown.png');
+			}	
+			&.green {
+				background-image:url('../images/atlas-green.png');
+			}	
+			&.black {
+				background-image:url('../images/atlas-black.png');
+			}	
+			&.white {
+				background-image:url('../images/atlas-white.png');
+			}																											
+		}
+	}
+}
